@@ -6,6 +6,7 @@
     --danger-color: #db3a34;
     --warning-color: #ed9b40;
     --success-color: #3bceac;
+    --success-v1-color: #2a977e;
 
     --border-radius: 8px;
     --input-border-radius: 10px;
@@ -204,4 +205,11 @@ button:hover {
 button:focus,
 button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
+}
+
+button.primary {
+    background-color: var(--success-v1-color);
+}
+button.primary:hover {
+    background-color: var(--success-color);
 }

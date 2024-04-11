@@ -8,7 +8,7 @@
   }
 
   let char = randomChar();
-  let romanji = true;
+  let romanji = false;
   let kataChoice = "hiragana";
   $: hiragana = kataChoice == "hiragana";
 </script>
@@ -18,31 +18,30 @@
   <div class="f f1 cc">
     <Symbol kata={KATA_MAP[char]} {romanji} {hiragana} katakana={!hiragana} />
     <div>
-      <button class="mg" on:click={() => (char = randomChar())}>More</button>
-      <form class="f cc">
-        <div class="f rc">
-          <label for="romanji">Romanji</label>
-          <input type="checkbox" name="romanji" bind:checked={romanji} />
-        </div>
-        <div class="f rc">
-          <label for="hiragana">Hiragana</label>
-          <input
-            name="hiragana"
-            type="radio"
-            bind:group={kataChoice}
-            value="hiragana"
-          />
-        </div>
-        <div class="f rc">
-          <label for="katakana">Katakana</label>
-          <input
-            name="katakana"
-            type="radio"
-            bind:group={kataChoice}
-            value="katakana"
-          />
-        </div>
-      </form>
+      <div class="g_5 mg fi">
+        <button class="primary" on:click={() => (romanji = !romanji)}>
+          Show
+        </button>
+        <button on:click={() => (char = randomChar())}>Next</button>
+      </div>
+      <div class="f rc">
+        <label for="hiragana">Hiragana</label>
+        <input
+          name="hiragana"
+          type="radio"
+          bind:group={kataChoice}
+          value="hiragana"
+        />
+      </div>
+      <div class="f rc">
+        <label for="katakana">Katakana</label>
+        <input
+          name="katakana"
+          type="radio"
+          bind:group={kataChoice}
+          value="katakana"
+        />
+      </div>
     </div>
   </div>
 </main>
