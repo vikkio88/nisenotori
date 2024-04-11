@@ -1,0 +1,4 @@
+src/assets/audio/
+src/assets/download*
+node_modules/
+dist/
