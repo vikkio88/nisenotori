@@ -29,6 +29,7 @@
         border: var(--borders);
         border-radius: var(--border-radius);
         padding: 1rem 2rem;
+        box-shadow: var(--box-shadow);
     }
 
     h1 {

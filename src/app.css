@@ -1,6 +1,23 @@
 :root {
-    --main-font-color: #000;
-    --main-bg-color: #fff;
+    --main-font-color: #000003;
+    --main-bg-color: #fbfcfe;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-font-color: #fbfcfe;
+        --main-bg-color: #000003;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --main-font-color: #000003;
+        --main-bg-color: #fbfcfe;
+    }
+}
+
+:root {
     --accent-color: #646cff;
     --accent-v1-color: #535bf2;
     --danger-color: #db3a34;
@@ -8,7 +25,7 @@
     --success-color: #3bceac;
     --success-v1-color: #2a977e;
 
-    --border-radius: 8px;
+    --border-radius: .6rem;
     --input-border-radius: 10px;
     --pad: 1rem;
     --font-size: 16px;
@@ -16,6 +33,8 @@
     --medium-font-size: 18px;
 
     --borders: 2px var(--main-font-color) solid;
+    --thin-borders: 2px var(--main-font-color) solid;
+    --box-shadow: 0 1px 15px var(--main-font-color);
 
     line-height: 1.5;
 
@@ -191,7 +210,7 @@ button {
     padding: 0.6rem 1.2rem;
     font-size: 1rem;
     font-weight: bold;
-    color: var(--main-bg-color);
+    color: var(--main-font-color);
     font-family: inherit;
     background-color: var(--accent-v1-color);
     cursor: pointer;
@@ -204,12 +223,18 @@ button:hover {
 
 button:focus,
 button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+    outline: var(--border-radius) auto -webkit-focus-ring-color;
 }
 
 button.primary {
     background-color: var(--success-v1-color);
 }
+
 button.primary:hover {
     background-color: var(--success-color);
+}
+
+button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
 }
