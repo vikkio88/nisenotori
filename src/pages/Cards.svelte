@@ -9,7 +9,7 @@
 </script>
 
 {#if gameStarted}
-    <CardsMemo charSet={BASE} kataChoice={HIRAGANA} />
+    <CardsMemo charSet={BASE} kataChoice={kata} />
 {:else}
     <h1>Card Memo Game</h1>
     <div class="f f1 cc g">
@@ -37,9 +37,10 @@
 
         <div>
             <h3>Charset</h3>
-            
         </div>
 
-        <button class="big success mg">Start</button>
+        <button class="big success mg" on:click={() => (gameStarted = true)}>
+            Start
+        </button>
     </div>
 {/if}
