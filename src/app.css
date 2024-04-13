@@ -256,3 +256,8 @@ button.warning {
 button.warning:hover {
     background-color: var(--warning-v1-color);
 }
+
+button.big {
+    padding: 2rem 3rem;
+    font-size: 1.5rem;
+}

@@ -1,10 +1,9 @@
-import { KATA_MAP, ROMANJI_CHARS } from "./data/kataMap";
-export function randomChar() {
-    return Object.values(ROMANJI_CHARS)[
-        Math.floor(Math.random() * Object.values(ROMANJI_CHARS).length)
-    ];
+import { ALL_SYLLABALES } from "./data/charSets";
+import { KATA_MAP } from "./data/kataMap";
+export function randomChar(charset = ALL_SYLLABALES) {
+    return charset[Math.floor(Math.random() * charset.length)];
 }
 
-export function randomKata() {
-    return KATA_MAP[randomChar()];
+export function randomKata(charset = ALL_SYLLABALES) {
+    return KATA_MAP[randomChar(charset)];
 }
