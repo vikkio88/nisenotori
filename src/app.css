@@ -21,7 +21,9 @@
     --accent-color: #646cff;
     --accent-v1-color: #535bf2;
     --danger-color: #db3a34;
+    --danger-v1-color: #9c2723;
     --warning-color: #ed9b40;
+    --warning-v1-color: #bb7b32;
     --success-color: #3bceac;
     --success-v1-color: #2a977e;
 
@@ -226,15 +228,31 @@ button:focus-visible {
     outline: var(--border-radius) auto -webkit-focus-ring-color;
 }
 
-button.primary {
+button.success {
     background-color: var(--success-v1-color);
 }
 
-button.primary:hover {
+button.success:hover {
     background-color: var(--success-color);
 }
 
 button:disabled {
     opacity: .5;
     cursor: not-allowed;
+}
+
+button.danger {
+    background-color: var(--danger-color);
+}
+
+button.danger:hover {
+    background-color: var(--danger-v1-color);
+}
+
+button.warning {
+    background-color: var(--warning-color);
+}
+
+button.warning:hover {
+    background-color: var(--warning-v1-color);
 }
