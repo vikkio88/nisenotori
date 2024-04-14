@@ -4,17 +4,19 @@
   import { HIRAGANA, KATAKANA } from "../libs/data/consts";
   import { randomKata } from "../libs/utils";
 
-  export let charSet = ALL_SYLLABALES;
+  export let charsetLabel = "All Syllables";
+  export let charset = [...ALL_SYLLABALES];
   export let kataChoice = HIRAGANA;
+  export let remove = false;
 
   let result = {
     shown: 1,
-    total: charSet.length,
+    total: charset.length,
     correct: 0,
     wrong: 0,
   };
 
-  let kata = randomKata(charSet);
+  let kata = randomKata(charset);
   let flipped = false;
   let wasFlipped = false;
 
@@ -29,16 +31,21 @@
   }
 
   function next() {
+    if (remove) {
+      charset = charset.filter((c) => c != (kata.romanji || kata.romanji));
+    }
     flipped = false;
     wasFlipped = false;
-    kata = randomKata();
+    kata = randomKata(charset);
     result.shown += 1;
   }
 </script>
 
 <div>
-  <h1>Card Game</h1>
-  <h2>Shown: {result.shown} Correct: {result.correct} Wrong: {result.wrong}</h2>
+  <h1>{kataChoice} ({charsetLabel})</h1>
+  <h2>
+    {result.shown}/{result.total} Correct: {result.correct} Wrong: {result.wrong}
+  </h2>
 </div>
 <div class="f f1 cc">
   <FlipCard
@@ -72,6 +79,9 @@
 </div>
 
 <style>
+  h1 {
+    text-transform: capitalize;
+  }
   h1,
   h2 {
     text-align: center;

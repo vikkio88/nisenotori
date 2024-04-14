@@ -1,10 +1,10 @@
 import { ROMANJI_CHARS as r } from "./kataMap";
 
 export const ALL_SYLLABALES = Object.values(r);
-export const A = [r.A, r.I, r.U, r.E, , r.O];
-export const K = [r.KA, r.KI, r.KU, r.KE, , r.KO];
+export const A = [r.A, r.I, r.U, r.E, r.O];
+export const K = [r.KA, r.KI, r.KU, r.KE, r.KO];
 
-export const S = [r.SA, r.SHI, r.SU, r.SE, , r.SO];
+export const S = [r.SA, r.SHI, r.SU, r.SE, r.SO];
 export const T = [r.TA, r.CHI, r.TSU, r.TE, r.TO];
 export const N = [r.NA, r.NI, r.NU, r.NE, r.NO];
 export const H = [r.HA, r.HI, r.FU, r.HE, r.HO];
@@ -45,6 +45,10 @@ export const COMBO = [...KY, ...GY, ...SH, ...J, ...CH, ...NY, ...HY, ...BY, ...
 
 
 export const CHARSETS = [
+    // in Cards pages I use [0] as default one
+    { label: 'Base', charset: BASE },
+    //
+
     { label: 'All', charset: ALL_SYLLABALES },
     { label: 'A-O', charset: A },
     { label: 'K', charset: K },
@@ -72,3 +76,5 @@ export const CHARSETS = [
     { label: 'Only Daukon', charset: DAKUON },
     { label: 'Combo', charset: COMBO },
 ];
+
+export const charsetOptions = CHARSETS.map((c, i) => ({ value: i, ...c }));

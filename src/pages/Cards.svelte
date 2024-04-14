@@ -1,15 +1,21 @@
 <script>
+    import Select from "../components/shared/Select.svelte";
     import CardsMemo from "../games/CardsMemo.svelte";
-    import { BASE } from "../libs/data/charSets";
+    import { CHARSETS, charsetOptions } from "../libs/data/charSets";
     import { HIRAGANA, KATAKANA } from "../libs/data/consts";
 
     let gameStarted = false;
 
     let kata = HIRAGANA;
+    let selectedCharsetIndex = 0;
 </script>
 
 {#if gameStarted}
-    <CardsMemo charSet={BASE} kataChoice={kata} />
+    <CardsMemo
+        charset={CHARSETS[selectedCharsetIndex].charset}
+        charsetLabel={CHARSETS[selectedCharsetIndex].label}
+        kataChoice={kata}
+    />
 {:else}
     <h1>Card Memo Game</h1>
     <div class="f f1 cc g">
@@ -37,6 +43,10 @@
 
         <div>
             <h3>Charset</h3>
+            <Select
+                options={charsetOptions}
+                bind:selected={selectedCharsetIndex}
+            />
         </div>
 
         <button class="big success mg" on:click={() => (gameStarted = true)}>
