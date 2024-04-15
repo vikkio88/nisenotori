@@ -1,5 +1,6 @@
 <script>
   import FlipCard from "../components/FlipCard.svelte";
+  import Symbol from "../components/Symbol.svelte";
   import { ALL_SYLLABALES } from "../libs/data/charSets";
   import { HIRAGANA, KATAKANA } from "../libs/data/consts";
   import { randomKata } from "../libs/utils";
@@ -9,24 +10,30 @@
   export let kataChoice = HIRAGANA;
   export let remove = false;
 
-  let result = {
-    shown: 1,
-    total: charset.length,
-    correct: 0,
-    wrong: 0,
-  };
+  function newResult(charset) {
+    return {
+      shown: 1,
+      total: charset.length,
+      correct: [],
+      wrong: [],
+    };
+  }
+
+  let result = newResult(charset);
 
   let kata = randomKata(charset);
   let flipped = false;
   let wasFlipped = false;
 
+  let isGameFinished = false;
+
   function correct() {
-    result.correct += 1;
+    result.correct.push(kata);
     next();
   }
 
   function wrong() {
-    result.wrong += 1;
+    result.wrong.push(kata);
     next();
   }
 
@@ -34,49 +41,112 @@
     if (remove) {
       charset = charset.filter((c) => c != (kata.romanji || kata.romanji));
     }
+
     flipped = false;
     wasFlipped = false;
+    if (result.total <= result.shown && remove) {
+      endGame();
+      return;
+    }
+
     kata = randomKata(charset);
     result.shown += 1;
+  }
+
+  function endGame() {
+    isGameFinished = true;
+  }
+
+  export let restart = () => {
+    console.log("restart");
+  };
+
+  export let end = () => {
+    console.log("end");
+  };
+
+  $: gameOver = isGameFinished || charset.length < 1;
+
+  function reset(partialCharset) {
+    charset = partialCharset.map((k) => k.romanji);
+    result = newResult(charset);
+    isGameFinished = false;
   }
 </script>
 
 <div>
-  <h1>{kataChoice} ({charsetLabel})</h1>
-  <h2>
-    {result.shown}/{result.total} Correct: {result.correct} Wrong: {result.wrong}
-  </h2>
-</div>
-<div class="f f1 cc">
-  <FlipCard
-    {kata}
-    hiragana={kataChoice === HIRAGANA}
-    katakana={kataChoice === KATAKANA}
-    {flipped}
-  />
+  <h1>{kataChoice} ( {charsetLabel} )</h1>
+  {#if !gameOver}
+    <h2>
+      {result.shown}/{result.total}
+    </h2>
+  {/if}
 </div>
 
-<div class="mg fi">
-  <button
-    class="warning"
-    on:click={() => {
-      if (!wasFlipped) {
-        wasFlipped = true;
-      }
-      flipped = !flipped;
-    }}
-  >
-    Flip
-  </button>
-</div>
-<div class="mg2 g_5">
-  <button class="danger" disabled={!wasFlipped} on:click={wrong}>
-    Wrong
-  </button>
-  <button class="success" disabled={!wasFlipped} on:click={correct}>
-    Correct
-  </button>
-</div>
+{#if gameOver}
+  <div class="f1 f cc g">
+    <h2>Finished</h2>
+    <h2 class="mg">
+      Correct: {result.correct.length} Wrong: {result.wrong.length}
+    </h2>
+    <div class="fic g_5">
+      <button class="success" on:click={restart}>Restart</button>
+      <button class="danger" on:click={end}>End</button>
+    </div>
+  </div>
+  {#if result.wrong.length > 0 && remove}
+    <button class="success" on:click={() => reset(result.wrong)}>
+      Try again
+    </button>
+    <h3 class="danger">Errors</h3>
+    <div class="fi g">
+      {#each result.wrong as kata}
+        <Symbol
+          small
+          {kata}
+          hiragana={kataChoice == HIRAGANA}
+          katakana={kataChoice == KATAKANA}
+          romanji
+        />
+      {/each}
+    </div>
+  {/if}
+{:else}
+  <div class="f f1 cc">
+    <FlipCard
+      {kata}
+      hiragana={kataChoice === HIRAGANA}
+      katakana={kataChoice === KATAKANA}
+      {flipped}
+    />
+  </div>
+
+  <div class="mg fi">
+    <button
+      class="warning"
+      on:click={() => {
+        if (!wasFlipped) {
+          wasFlipped = true;
+        }
+        flipped = !flipped;
+      }}
+    >
+      Flip
+    </button>
+  </div>
+  <div class="mg2 g_5">
+    <button class="danger" disabled={!wasFlipped} on:click={wrong}>
+      Wrong
+    </button>
+    <button class="success" disabled={!wasFlipped} on:click={correct}>
+      Correct
+    </button>
+  </div>
+
+  {#if !remove}
+    <button class="danger" on:click={endGame}>End Game</button>
+  {/if}
+{/if}
 
 <style>
   h1 {
@@ -85,5 +155,9 @@
   h1,
   h2 {
     text-align: center;
+  }
+
+  h3 {
+    margin: 0.5rem 0;
   }
 </style>
