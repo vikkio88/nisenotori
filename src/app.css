@@ -36,7 +36,7 @@
 
     --borders: 2px var(--main-font-color) solid;
     --thin-borders: 2px var(--main-font-color) solid;
-    --box-shadow: 0 1px 15px var(--main-font-color);
+    --box-shadow: 0 .2rem 1rem var(--main-font-color);
 
     line-height: 1.5;
 
@@ -182,6 +182,14 @@ Utils
     justify-content: center;
 }
 
+.fic {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+}
+
 .g_5 {
     gap: .5rem;
 }
@@ -201,6 +209,16 @@ Debug Utils
     border: var(--borders);
     border-color: blue;
     background-color: red;
+}
+
+/* Font Colours */
+
+.success {
+    color: var(--success-color);
+}
+
+.danger {
+    color: var(--danger-color);
 }
 
 
@@ -228,21 +246,23 @@ button:focus-visible {
     outline: var(--border-radius) auto -webkit-focus-ring-color;
 }
 
+button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
 button.success {
     background-color: var(--success-v1-color);
+    color: var(--main-font-color);
 }
 
 button.success:hover {
     background-color: var(--success-color);
 }
 
-button:disabled {
-    opacity: .5;
-    cursor: not-allowed;
-}
-
 button.danger {
     background-color: var(--danger-color);
+    color: var(--main-font-color);
 }
 
 button.danger:hover {
@@ -251,6 +271,7 @@ button.danger:hover {
 
 button.warning {
     background-color: var(--warning-color);
+    color: var(--main-font-color);
 }
 
 button.warning:hover {
