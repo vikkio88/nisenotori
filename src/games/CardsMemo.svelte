@@ -4,11 +4,13 @@
   import { ALL_SYLLABALES } from "../libs/data/charSets";
   import { HIRAGANA, KATAKANA } from "../libs/data/consts";
   import { randomKata } from "../libs/utils";
+  import audio, { SOUNDS } from "../libs/audio";
 
   export let charsetLabel = "All Syllables";
   export let charset = [...ALL_SYLLABALES];
   export let kataChoice = HIRAGANA;
   export let remove = false;
+  export let mute = true;
 
   function newResult(charset) {
     return {
@@ -29,11 +31,17 @@
 
   function correct() {
     result.correct.push(kata);
+    if (!mute) {
+      audio.play(SOUNDS.BEEP);
+    }
     next();
   }
 
   function wrong() {
     result.wrong.push(kata);
+    if (!mute) {
+      audio.play(SOUNDS.BOBOP);
+    }
     next();
   }
 

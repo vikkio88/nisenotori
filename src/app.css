@@ -282,3 +282,11 @@ button.big {
     padding: 2rem 3rem;
     font-size: 1.5rem;
 }
+
+/* Inputs */
+input[type="checkbox"] {
+    transform: scale(1.5);
+}
+input[type="radio"] {
+    transform: scale(1.5);
+}
