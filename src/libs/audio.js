@@ -24,11 +24,14 @@ function createAudioPlayerInstance() {
             playing = this.audios[sound];
             playing.play();
 
-            playing.once("end", function () {
+            playing.on("end", function () {
                 playing = null;
             });
+        },
+        destroy() {
+            Object.values(this.audios).forEach(a => a.unload());
         }
     };
 }
 
-export default createAudioPlayerInstance();
+export default createAudioPlayerInstance;

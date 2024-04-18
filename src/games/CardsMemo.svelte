@@ -4,7 +4,8 @@
   import { ALL_SYLLABALES } from "../libs/data/charSets";
   import { HIRAGANA, KATAKANA } from "../libs/data/consts";
   import { randomKata } from "../libs/utils";
-  import audio, { SOUNDS } from "../libs/audio";
+  import audioInstance, { SOUNDS } from "../libs/audio";
+  import { onMount } from "svelte";
 
   export let charsetLabel = "All Syllables";
   export let charset = [...ALL_SYLLABALES];
@@ -28,6 +29,8 @@
   let wasFlipped = false;
 
   let isGameFinished = false;
+
+  const audio = audioInstance();
 
   function correct() {
     result.correct.push(kata);
@@ -80,6 +83,12 @@
     result = newResult(charset);
     isGameFinished = false;
   }
+
+  onMount(() => {
+    return () => {
+      audio.destroy();
+    };
+  });
 </script>
 
 <div>
