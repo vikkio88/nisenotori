@@ -104,6 +104,10 @@ Utils
     margin: 0 auto;
 }
 
+.mg_5 {
+    margin: .5rem;
+}
+
 .mg {
     margin: 1rem;
 }
@@ -202,17 +206,16 @@ Utils
     gap: 2rem;
 }
 
-/*
-Debug Utils
-*/
-.debug {
-    border: var(--borders);
-    border-color: blue;
-    background-color: red;
+.oa {
+    overflow: auto;
 }
 
-/* Font Colours */
+/* Font Styles */
+.tt-cpz {
+    text-transform: capitalize;
+}
 
+/*  Colours */
 .success {
     color: var(--success-color);
 }
@@ -221,6 +224,15 @@ Debug Utils
     color: var(--danger-color);
 }
 
+
+/*
+Debug Utils
+*/
+.debug {
+    border: var(--borders);
+    border-color: blue;
+    background-color: red;
+}
 
 
 /** Buttons */
@@ -282,11 +294,16 @@ button.big {
     padding: 2rem 3rem;
     font-size: 1.5rem;
 }
+button.small {
+    padding: 0.3rem 1rem;
+    font-size: .8rem;
+}
 
 /* Inputs */
 input[type="checkbox"] {
     transform: scale(1.5);
 }
+
 input[type="radio"] {
     transform: scale(1.5);
 }

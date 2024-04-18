@@ -3,7 +3,8 @@
   import Select from "../components/shared/Select.svelte";
   import CardsMemo from "../games/CardsMemo.svelte";
   import { CHARSETS, charsetOptions } from "../libs/data/charSets";
-  import { HIRAGANA, KATAKANA } from "../libs/data/consts";
+  import { HIRAGANA } from "../libs/data/consts";
+  import SyllabarySelector from "../components/shared/SyllabarySelector.svelte";
 
   let gameStarted = false;
 
@@ -30,24 +31,7 @@
     <div class="f fr g2">
       <div class="f cc g_5">
         <h3>Syllabary</h3>
-        <div class="fi g_5">
-          <label for={HIRAGANA}>Hiragana</label>
-          <input
-            name={HIRAGANA}
-            type="radio"
-            bind:group={kata}
-            value={HIRAGANA}
-          />
-        </div>
-        <div class="fi g_5">
-          <label for={KATAKANA}>Katakana</label>
-          <input
-            name={KATAKANA}
-            type="radio"
-            bind:group={kata}
-            value={KATAKANA}
-          />
-        </div>
+        <SyllabarySelector bind:kata />
       </div>
       <div class="f cs">
         <h3>Charset</h3>

@@ -1,4 +1,6 @@
 src/assets/audio/
 src/assets/download*
+public/assets/audio/syllables
+public/assets/img/kana
 node_modules/
 dist/

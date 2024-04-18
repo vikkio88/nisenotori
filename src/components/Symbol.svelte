@@ -1,9 +1,8 @@
 <script>
     export let kata = null;
-    export let hiragana = true;
+    export let hiragana = false;
     export let katakana = false;
     export let romanji = false;
-
 
     export let small = false;
 </script>
@@ -11,7 +10,7 @@
 {#if !Boolean(kata)}
     <div />
 {:else}
-    <div class="symbol f cc">
+    <div class="symbol f cc" class:small>
         {#if romanji}
             <span>{kata.romanjiLabel || kata.romanji}</span>
         {/if}
@@ -31,14 +30,17 @@
     div.symbol {
         border: var(--borders);
         border-radius: var(--border-radius);
-        padding: 1rem 2rem;
+        padding: .5rem 1rem;
     }
 
     h1 {
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
 
-    .small {
-        font-size: 1.2rem;
+    h1.small {
+        font-size: 1.3rem;
+    }
+    div.small {
+        padding: 0.5rem 1rem;
     }
 </style>
