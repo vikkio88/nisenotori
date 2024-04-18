@@ -14,11 +14,11 @@
     <Route path="/" component={Dash} />
     <Route path="/syllabary" component={Syllabary} />
 
-    <Route path="/hiragana/:romanji" let:params>
-      <Kata romanji={params.romanji} kata={HIRAGANA} />
+    <Route path="/hiragana/:romaji" let:params>
+      <Kata romaji={params.romaji} kata={HIRAGANA} />
     </Route>
-    <Route path="/katakana/:romanji" let:params>
-      <Kata romanji={params.romanji} kata={KATAKANA} />
+    <Route path="/katakana/:romaji" let:params>
+      <Kata romaji={params.romaji} kata={KATAKANA} />
     </Route>
     <Route path="/cards" component={Cards} />
   </Router>

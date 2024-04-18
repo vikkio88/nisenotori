@@ -5,16 +5,16 @@
     import { HIRAGANA, KATAKANA } from "../libs/data/consts";
     import { onMount } from "svelte";
 
-    export let romanji = null;
+    export let romaji = null;
     export let kata = HIRAGANA;
-    let syllable = KATA_MAP[romanji] || false;
+    let syllable = KATA_MAP[romaji] || false;
     let audio = null;
     let playing = false;
 
     onMount(() => {
         if (Boolean(syllable)) {
             audio = new Howl({
-                src: `/assets/audio/syllables/${syllable.romanji}.mp3`,
+                src: `/assets/audio/syllables/${syllable.romaji}.mp3`,
             });
             // @ts-ignore
             audio.on("play", function () {
@@ -34,23 +34,23 @@
 </script>
 
 {#if !Boolean(syllable)}
-    <div class="f1 f cc">not a romanji syllable</div>
+    <div class="f1 f cc">not a romaji syllable</div>
 {:else}
     <h2 class="tt-cpz">{kata}</h2>
 
     <div class="f1 f cc">
         <div class="f r g">
             {#if kata === KATAKANA}
-                <Symbol kata={syllable} romanji katakana />
+                <Symbol kata={syllable} romaji katakana />
                 <img
-                    src={`/assets/img/kana/${romanji}_${KATAKANA}.svg`}
-                    alt={`${romanji} kana ${KATAKANA} stroke order`}
+                    src={`/assets/img/kana/${romaji}_${KATAKANA}.svg`}
+                    alt={`${romaji} kana ${KATAKANA} stroke order`}
                 />
             {:else}
-                <Symbol kata={syllable} romanji />
+                <Symbol kata={syllable} romaji />
                 <img
-                    src={`/assets/img/kana/${romanji}_${HIRAGANA}.svg`}
-                    alt={`${romanji} kana ${HIRAGANA} stroke order`}
+                    src={`/assets/img/kana/${romaji}_${HIRAGANA}.svg`}
+                    alt={`${romaji} kana ${HIRAGANA} stroke order`}
                 />
             {/if}
         </div>

@@ -3,7 +3,7 @@
     import Symbol from "../components/Symbol.svelte";
     import SyllabarySelector from "../components/shared/SyllabarySelector.svelte";
     import { A, K, S, T, N, H, M, Y, R, W, n } from "../libs/data/charSets";
-    import { HIRAGANA, KATAKANA, ROMANJI } from "../libs/data/consts";
+    import { HIRAGANA, KATAKANA, ROMAJI } from "../libs/data/consts";
     import { KATA_MAP } from "../libs/data/kataMap";
     const rows = [
         A,
@@ -19,7 +19,7 @@
         [n, null, null, null, null],
     ];
 
-    let romanji = false;
+    let romaji = false;
     let kata = HIRAGANA;
 </script>
 
@@ -30,8 +30,8 @@
     </div>
 
     <div class="f rc g_5 mg_5">
-        <label class="tt-cpz" for="romanji">{ROMANJI}</label>
-        <input type="checkbox" name="romanji" bind:checked={romanji} />
+        <label class="tt-cpz" for="romaji">{ROMAJI}</label>
+        <input type="checkbox" name="romaji" bind:checked={romaji} />
     </div>
 </div>
 
@@ -45,14 +45,14 @@
                             hiragana={kata === HIRAGANA}
                             katakana={kata === KATAKANA}
                             kata={KATA_MAP[syllable]}
-                            {romanji}
+                            {romaji}
                         />
                         <div class="btn f cc">
                             <button
                                 class="small"
                                 on:click={() =>
                                     navigate(
-                                        `/${kata}/${KATA_MAP[syllable].romanji}`,
+                                        `/${kata}/${KATA_MAP[syllable].romaji}`,
                                     )}
                             >
                                 ➡️

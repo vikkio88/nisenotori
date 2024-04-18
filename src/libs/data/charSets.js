@@ -1,4 +1,4 @@
-import { ROMANJI_CHARS as r } from "./kataMap";
+import { ROMAJI_CHARS as r } from "./kataMap";
 
 export const ALL_SYLLABALES = Object.values(r);
 export const A = [r.A, r.I, r.U, r.E, r.O];

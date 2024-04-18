@@ -2,7 +2,7 @@
     export let kata = null;
     export let hiragana = false;
     export let katakana = false;
-    export let romanji = false;
+    export let romaji = false;
 
     export let small = false;
 </script>
@@ -11,8 +11,8 @@
     <div />
 {:else}
     <div class="symbol f cc" class:small>
-        {#if romanji}
-            <span>{kata.romanjiLabel || kata.romanji}</span>
+        {#if romaji}
+            <span>{kata.romajiLabel || kata.romaji}</span>
         {/if}
         <h1 class:small>
             {#if hiragana}

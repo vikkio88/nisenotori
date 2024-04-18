@@ -1,6 +1,6 @@
 <script>
   import { navigate } from "svelte-routing";
-  import { KATA_MAP, ROMANJI_CHARS } from "../libs/data/kataMap";
+  import { KATA_MAP, ROMAJI_CHARS } from "../libs/data/kataMap";
 </script>
 
 <h1 title="偽の鳥">Nise no tori</h1>
@@ -9,9 +9,9 @@
 <div class="f cc f1 g">
   <h2>Learning</h2>
   <button class="big success" on:click={() => navigate("/syllabary")}>
-    {KATA_MAP[ROMANJI_CHARS.A].hiragana}
+    {KATA_MAP[ROMAJI_CHARS.A].hiragana}
 
-    {KATA_MAP[ROMANJI_CHARS.A].katakana}
+    {KATA_MAP[ROMAJI_CHARS.A].katakana}
   </button>
 </div>
 <div class="f cc f1 g">

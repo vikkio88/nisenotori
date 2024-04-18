@@ -50,7 +50,7 @@
 
   function next() {
     if (remove) {
-      charset = charset.filter((c) => c != (kata.romanji || kata.romanji));
+      charset = charset.filter((c) => c != (kata.romaji || kata.romaji));
     }
 
     flipped = false;
@@ -79,7 +79,7 @@
   $: gameOver = isGameFinished || charset.length < 1;
 
   function reset(partialCharset) {
-    charset = partialCharset.map((k) => k.romanji);
+    charset = partialCharset.map((k) => k.romaji);
     result = newResult(charset);
     isGameFinished = false;
   }
@@ -123,7 +123,7 @@
           {kata}
           hiragana={kataChoice == HIRAGANA}
           katakana={kataChoice == KATAKANA}
-          romanji
+          romaji
         />
       {/each}
     </div>

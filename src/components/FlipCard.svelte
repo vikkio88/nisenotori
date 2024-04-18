@@ -20,7 +20,7 @@
         </div>
         <div class="flipCard-back f cc">
             {#if flipped}
-                <h2>{kata.romanjiLabel || kata.romanji}</h2>
+                <h2>{kata.romajiLabel || kata.romaji}</h2>
             {/if}
         </div>
     </div>
