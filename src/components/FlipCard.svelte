@@ -29,8 +29,8 @@
 <style>
     .flipCard {
         background-color: transparent;
-        width: 150px;
-        height: 190px;
+        min-width: 270px;
+        min-height: 340px;
         perspective: 1000px;
     }
 
@@ -41,7 +41,6 @@
         text-align: center;
         transition: transform 0.6s;
         transform-style: preserve-3d;
-        box-shadow: var(--box-shadow);
         border-radius: var(--border-radius);
     }
 
@@ -61,7 +60,8 @@
 
     .flipCard-front {
         color: white;
-        background-color: var(--accent-color);
+        background-color: var(--main-bg-color);
+        border: var(--borders);
     }
 
     .flipCard-back {
@@ -71,9 +71,9 @@
     }
 
     h1 {
-        font-size: 3.2rem;
+        font-size: 4rem;
     }
     h2 {
-        font-size: 3rem;
+        font-size: 3.5rem;
     }
 </style>

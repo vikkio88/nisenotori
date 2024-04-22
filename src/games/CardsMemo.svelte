@@ -48,6 +48,12 @@
     next();
   }
 
+  function again() {
+    flipped = false;
+    wasFlipped = false;
+    kata = randomKata(charset);
+  }
+
   function next() {
     if (remove) {
       charset = charset.filter((c) => c != (kata.romaji || kata.romaji));
@@ -94,9 +100,7 @@
 <div>
   <h1>{kataChoice} ( {charsetLabel} )</h1>
   {#if !gameOver}
-    <h2>
-      {result.shown}/{result.total}
-    </h2>
+    <meter value={result.shown} max={result.total} min="1" />
   {/if}
 </div>
 
@@ -136,11 +140,8 @@
       katakana={kataChoice === KATAKANA}
       {flipped}
     />
-  </div>
-
-  <div class="mg fi">
     <button
-      class="warning"
+      class="mg"
       on:click={() => {
         if (!wasFlipped) {
           wasFlipped = true;
@@ -151,9 +152,12 @@
       Flip
     </button>
   </div>
-  <div class="mg2 g_5">
+  <div class="mg2 g_5 ctrls" class:hiddenCtrls={!wasFlipped}>
     <button class="danger" disabled={!wasFlipped} on:click={wrong}>
       Wrong
+    </button>
+    <button class="warning" disabled={!wasFlipped} on:click={again}>
+      Again
     </button>
     <button class="success" disabled={!wasFlipped} on:click={correct}>
       Correct
@@ -176,5 +180,18 @@
 
   h3 {
     margin: 0.5rem 0;
+  }
+
+  meter {
+    width: 80vw;
+  }
+
+  .ctrls {
+    transition: .5ms;
+  }
+  .hiddenCtrls {
+    visibility: hidden;
+    transition: 1ms;
+
   }
 </style>
