@@ -17,5 +17,5 @@
 <div class="f cc f1 g">
   <h2>Games</h2>
   <button class="big" on:click={() => navigate("/cards")}>Cards</button>
-  <button class="big" disabled>Guess</button>
+  <button class="big" on:click={()=> navigate("/guess")}>Guess</button>
 </div>

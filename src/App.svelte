@@ -5,6 +5,7 @@
   import Syllabary from "./pages/Syllabary.svelte";
   import Kata from "./pages/Kata.svelte";
   import { HIRAGANA, KATAKANA } from "./libs/data/consts";
+  import Guess from "./pages/Guess.svelte";
 
   let url = "";
 </script>
@@ -20,7 +21,9 @@
     <Route path="/katakana/:romaji" let:params>
       <Kata romaji={params.romaji} kata={KATAKANA} />
     </Route>
+    <!-- Games -->
     <Route path="/cards" component={Cards} />
+    <Route path="/guess" component={Guess} />
   </Router>
 </main>
 
