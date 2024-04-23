@@ -1,18 +1,20 @@
 <script>
   import FlipCard from "../components/FlipCard.svelte";
-  import { ROMAJI_CHARS } from "../libs/data/kataMap";
-  import { randomKata } from "../libs/utils";
+  import { BASE } from "../libs/data/charSets";
+  import { GUESS_GAME_TYPES, getNewGuessingSet } from "./utils/guess";
 
-  let kata = randomKata();
-  let katas = Object.values(ROMAJI_CHARS).slice(0, 4);
+  export let type = GUESS_GAME_TYPES.SYLLABLES;
+  export let charset = BASE;
+  let { kata, possibleKatas } = getNewGuessingSet(charset);
 </script>
 
 <div class="f1 f cc">
-  <FlipCard {kata} hiragana />
-  <div class="fi mg">
-    <button>{kata.romaji}</button>
-    <button>{kata.romaji}</button>
-    <button>{kata.romaji}</button>
-    <button>{kata.romaji}</button>
+  {#if type === GUESS_GAME_TYPES.SYLLABLES}
+    <FlipCard {kata} hiragana />
+  {/if}
+  <div class="fi mg g_5">
+    {#each possibleKatas as possibleKata}
+      <button>{possibleKata}</button>
+    {/each}
   </div>
 </div>
