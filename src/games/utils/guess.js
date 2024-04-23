@@ -1,6 +1,8 @@
 import { ROMAJI_CHARS } from "../../libs/data/kataMap";
 import { randomKata } from "../../libs/utils";
 
+function byRandom() { return Math.random() - 0.5; }
+
 export const GUESS_GAME_TYPES = {
     SYLLABLES: 'syllables',
     AUDIO: 'audio',
@@ -10,10 +12,11 @@ export const GUESS_GAME_TYPES = {
     COMBO_ALL: 'combo_all',
 };
 
-export function getNewGuessingSet(charset) {
+export function getNewGuessingSet(charset, options) {
     let kata = randomKata(charset);
     const chars = Object.values(ROMAJI_CHARS).filter(c => c != kata.romaji);
-    //TODO: shuffle
-    let possibleKatas = [...chars.slice(0, 3), kata.romaji];
+    chars.sort(byRandom);
+    let possibleKatas = [...chars.slice(0, options - 1), kata.romaji];
+    possibleKatas.sort(byRandom);
     return { kata, possibleKatas };
 }
