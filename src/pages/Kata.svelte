@@ -4,6 +4,7 @@
     import { KATA_MAP } from "../libs/data/kataMap";
     import { HIRAGANA, KATAKANA } from "../libs/data/consts";
     import { onMount } from "svelte";
+    import { audioUrlFromKata } from "../libs/audio";
 
     export let romaji = null;
     export let kata = HIRAGANA;
@@ -14,7 +15,7 @@
     onMount(() => {
         if (Boolean(syllable)) {
             audio = new Howl({
-                src: `/assets/audio/syllables/${syllable.romaji}.mp3`,
+                src: audioUrlFromKata(syllable),
             });
             // @ts-ignore
             audio.on("play", function () {

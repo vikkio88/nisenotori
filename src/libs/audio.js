@@ -34,4 +34,8 @@ function createAudioPlayerInstance() {
     };
 }
 
+export function audioUrlFromKata({ romaji }) {
+    return `/assets/audio/syllables/${romaji}.mp3`;
+}
+
 export default createAudioPlayerInstance;
