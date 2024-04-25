@@ -78,3 +78,4 @@ export const CHARSETS = [
 ];
 
 export const charsetOptions = CHARSETS.map((c, i) => ({ value: i, ...c }));
+export const removeCurrentRomaji = ({ romaji }) => i => i !== romaji;
