@@ -53,6 +53,7 @@
     charset={CHARSETS[selectedCharsetIndex].charset}
     kataChoice={kata}
     {optionsFromCharset}
+    restart={() => (gameStarted = false)}
     end={() => navigate("/", { replace: true })}
   />
 {/if}

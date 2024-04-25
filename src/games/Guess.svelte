@@ -6,8 +6,12 @@
   import { GUESS_GAME_TYPES, getNewGuessingSet } from "./utils/guess";
   import { audioUrlFromKata } from "../libs/audio";
   import { HIRAGANA, KATAKANA } from "../libs/data/consts";
+  import { GameResult } from "./utils/gameResult";
+  import Symbol from "../components/Symbol.svelte";
 
   let gameFinished = false;
+  const result = new GameResult();
+  let finalResult = null;
 
   export let kataChoice = HIRAGANA;
   export let optionsFromCharset = false;
@@ -15,6 +19,9 @@
   export let charset = BASE;
   let picks = optionsFromCharset ? [...charset] : [...BASE];
   export let options = 4;
+  export let restart = () => {
+    console.log("restart");
+  };
   export let end = () => {
     console.log("end");
   };
@@ -55,14 +62,15 @@
    */
   function guess(romaji) {
     if (currentQuiz.kata.romaji === romaji) {
-      console.log("CORRECT");
+      result.markCorrect(currentQuiz.kata);
     } else {
-      console.log("WRONG");
+      result.markWrong(currentQuiz.kata);
     }
 
     charset = charset.filter(removeCurrentRomaji(currentQuiz.kata));
 
     if (charset.length < 1) {
+      finalResult = result.result();
       gameFinished = true;
       return;
     }
@@ -78,11 +86,31 @@
 
 {#if gameFinished}
   <div class="f1 f cc">
-    <h1>Finished</h1>
+    <h2>Finished</h2>
+    <h2 class="mg">
+      Correct: {finalResult.correct} Wrong: {finalResult.wrong}
+    </h2>
     <div class="fic g_5">
+      <button class="success" on:click={restart}>Restart</button>
       <button class="danger" on:click={end}>End</button>
     </div>
   </div>
+  {#if finalResult.errors.length > 0}
+    <div class="f cc">
+      <h3 class="danger">Errors</h3>
+      <div class="fi g">
+        {#each finalResult.errors as r}
+          <Symbol
+            small
+            kata={KATA_MAP[r]}
+            hiragana={kataChoice == HIRAGANA}
+            katakana={kataChoice == KATAKANA}
+            romaji
+          />
+        {/each}
+      </div>
+    </div>
+  {/if}
 {:else}
   <div class="f1 f cc">
     {#if currentQuiz.guessType === GUESS_GAME_TYPES.SYLLABLES}
