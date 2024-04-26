@@ -21,12 +21,20 @@ export const GUESS_TYPES_MAP = {
     ],
 };
 
+export const GUESS_GAME_TYPES_LABELS = {
+    [GUESS_GAME_TYPES.SYLLABLES]: 'Syllables',
+    [GUESS_GAME_TYPES.AUDIO]: 'Audio',
+    [GUESS_GAME_TYPES.COMBO_ALL]: 'Audio & Syllables',
+};
+
+export const guessGameTypes = Object.values(GUESS_GAME_TYPES).map((g) => ({ value: g, label: GUESS_GAME_TYPES_LABELS[g] }));
+
 export function getNewGuessingSet({ charset, options, gameType, picks }) {
     const guessType = (GUESS_TYPES_MAP[gameType] || [gameType]).sort(byRandom)[0];
 
     //TODO: add way to handle combo
     let kata = randomKata(charset);
-    const chars = picks.filter(removeCurrentRomaji(kata))
+    const chars = picks.filter(removeCurrentRomaji(kata));
     chars.sort(byRandom);
     let possibleKatas = [...chars.slice(0, options - 1), kata.romaji];
     possibleKatas.sort(byRandom);

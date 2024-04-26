@@ -5,10 +5,12 @@
   import Game from "../games/Guess.svelte";
   import { CHARSETS, charsetOptions } from "../libs/data/charSets";
   import { HIRAGANA } from "../libs/data/consts";
+  import { GUESS_GAME_TYPES, guessGameTypes } from "../games/utils/guess";
 
   let kata = HIRAGANA;
   let selectedCharsetIndex = 0;
 
+  let selectedGameType = GUESS_GAME_TYPES.AUDIO;
   let optionsFromCharset = true;
 
   let gameStarted = false;
@@ -43,6 +45,10 @@
           bind:checked={optionsFromCharset}
         />
       </div>
+      <div class="fi g_5">
+        <label for="">Guess Type</label>
+        <Select options={guessGameTypes} bind:selected={selectedGameType} />
+      </div>
     </div>
     <button class="success big mg" on:click={() => (gameStarted = true)}>
       Start
@@ -52,6 +58,7 @@
   <Game
     charset={CHARSETS[selectedCharsetIndex].charset}
     kataChoice={kata}
+    type={selectedGameType}
     {optionsFromCharset}
     restart={() => (gameStarted = false)}
     end={() => navigate("/", { replace: true })}
