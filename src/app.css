@@ -300,6 +300,10 @@ button.small {
 }
 
 /* Inputs */
+input[type="text"] {
+    padding: 1rem 0.5rem;
+}
+
 input[type="checkbox"] {
     transform: scale(1.5);
 }

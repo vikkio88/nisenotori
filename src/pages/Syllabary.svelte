@@ -22,6 +22,7 @@
     } from "../libs/data/charSets";
     import { HIRAGANA, KATAKANA, ROMAJI } from "../libs/data/consts";
     import { KATA_MAP } from "../libs/data/kataMap";
+
     const baseRows = [
         A,
         K,
@@ -38,7 +39,27 @@
 
     const dakuonRows = [G, Z, D, B, P];
 
-    let romaji = false;
+    let baseRowsView = [...baseRows];
+    let dakuonRowsView = [...dakuonRows];
+
+    let filterTxt = "";
+
+    $: {
+        console.log(filterTxt);
+        if (Boolean(filterTxt)) {
+            baseRowsView = baseRowsView.map((r) =>
+                r.filter((l) => l && l.includes(filterTxt.toLowerCase())),
+            );
+            dakuonRowsView = dakuonRowsView.map((r) =>
+                r.filter((l) => l && l.includes(filterTxt.toLowerCase())),
+            );
+        } else {
+            dakuonRowsView = [...dakuonRows];
+            baseRowsView = [...baseRows];
+        }
+    }
+
+    let romaji = true;
     let kata = HIRAGANA;
 </script>
 
@@ -54,8 +75,19 @@
     </div>
 </div>
 
+<div class="f r">
+    <input
+        type="text"
+        bind:value={filterTxt}
+        placeholder="Filter syllables..."
+    />
+    <button class="danger" disabled={!Boolean(filterTxt)} on:click={() => (filterTxt = "")}>
+        Reset
+    </button>
+</div>
+
 <h2>Base</h2>
-{#each baseRows as row}
+{#each baseRowsView as row}
     <div class="f r">
         {#each row as syllable}
             <div class="f1 f c">
@@ -87,7 +119,7 @@
     </div>
 {/each}
 <h2>Dakuon / Handakuon</h2>
-{#each dakuonRows as row}
+{#each dakuonRowsView as row}
     <div class="f r">
         {#each row as syllable}
             <div class="f1 f c">
