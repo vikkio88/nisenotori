@@ -2,10 +2,27 @@
     import { navigate } from "svelte-routing";
     import Symbol from "../components/Symbol.svelte";
     import SyllabarySelector from "../components/shared/SyllabarySelector.svelte";
-    import { A, K, S, T, N, H, M, Y, R, W, n } from "../libs/data/charSets";
+    import {
+        A,
+        K,
+        S,
+        T,
+        N,
+        H,
+        M,
+        Y,
+        R,
+        W,
+        n,
+        G,
+        Z,
+        D,
+        B,
+        P,
+    } from "../libs/data/charSets";
     import { HIRAGANA, KATAKANA, ROMAJI } from "../libs/data/consts";
     import { KATA_MAP } from "../libs/data/kataMap";
-    const rows = [
+    const baseRows = [
         A,
         K,
         S,
@@ -18,6 +35,8 @@
         [W[0], null, null, null, W[1]],
         [n, null, null, null, null],
     ];
+
+    const dakuonRows = [G, Z, D, B, P];
 
     let romaji = false;
     let kata = HIRAGANA;
@@ -35,7 +54,8 @@
     </div>
 </div>
 
-{#each rows as row}
+<h2>Base</h2>
+{#each baseRows as row}
     <div class="f r">
         {#each row as syllable}
             <div class="f1 f c">
@@ -66,10 +86,40 @@
         {/each}
     </div>
 {/each}
+<h2>Dakuon / Handakuon</h2>
+{#each dakuonRows as row}
+    <div class="f r">
+        {#each row as syllable}
+            <div class="f1 f c">
+                <div class="sWrapper">
+                    <Symbol
+                        hiragana={kata === HIRAGANA}
+                        katakana={kata === KATAKANA}
+                        kata={KATA_MAP[syllable]}
+                        {romaji}
+                    />
+                    <div class="btn f cc">
+                        <button
+                            class="small"
+                            on:click={() =>
+                                //ADD Dakuon
+                                navigate(`/${kata}/${KATA_MAP[syllable].base}`)}
+                        >
+                            ➡️
+                        </button>
+                    </div>
+                </div>
+            </div>
+        {/each}
+    </div>
+{/each}
 
 <style>
     h1 {
         text-transform: capitalize;
+    }
+    h2 {
+        margin-bottom: 1rem;
     }
     .spacer {
         padding: 2.3rem;
