@@ -103,7 +103,9 @@
                             class="small"
                             on:click={() =>
                                 //ADD Dakuon
-                                navigate(`/${kata}/${KATA_MAP[syllable].base}`)}
+                                navigate(
+                                    `/${kata}/${KATA_MAP[syllable].romaji}`,
+                                )}
                         >
                             ➡️
                         </button>

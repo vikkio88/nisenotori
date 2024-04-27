@@ -40,20 +40,24 @@
     <h2 class="tt-cpz">{kata}</h2>
 
     <div class="f1 f cc">
-        <div class="f r g">
-            {#if kata === KATAKANA}
-                <Symbol kata={syllable} romaji katakana />
+        <div class="f r g_5 mg">
+            <Symbol
+                kata={syllable}
+                romaji
+                katakana={kata === KATAKANA}
+                hiragana={kata === HIRAGANA}
+            />
+            <div class="f cc">
+                {#if Boolean(syllable.base)}
+                    <h3>
+                        ({syllable.base})
+                    </h3>
+                {/if}
                 <img
-                    src={`/assets/img/kana/${romaji}_${KATAKANA}.svg`}
-                    alt={`${romaji} kana ${KATAKANA} stroke order`}
+                    src={`/assets/img/kana/${syllable.base || romaji}_${kata}.svg`}
+                    alt={`${romaji} kana ${kata} stroke order`}
                 />
-            {:else}
-                <Symbol kata={syllable} romaji />
-                <img
-                    src={`/assets/img/kana/${romaji}_${HIRAGANA}.svg`}
-                    alt={`${romaji} kana ${HIRAGANA} stroke order`}
-                />
-            {/if}
+            </div>
         </div>
 
         <div class="f c g mg">
