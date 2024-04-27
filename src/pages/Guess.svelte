@@ -12,6 +12,7 @@
 
   let selectedGameType = GUESS_GAME_TYPES.AUDIO;
   let optionsFromCharset = true;
+  let options = 4;
 
   let gameStarted = false;
 </script>
@@ -46,6 +47,19 @@
         />
       </div>
       <div class="fi g_5">
+        <label for="options">Possible Options</label>
+        <div class="fi g_5">
+          <h3>{options}</h3>
+          <input
+            name="options"
+            type="range"
+            min="2"
+            max="5"
+            bind:value={options}
+          />
+        </div>
+      </div>
+      <div class="fi g_5">
         <label for="">Guess Type</label>
         <Select options={guessGameTypes} bind:selected={selectedGameType} />
       </div>
@@ -59,6 +73,7 @@
     charset={CHARSETS[selectedCharsetIndex].charset}
     kataChoice={kata}
     type={selectedGameType}
+    {options}
     {optionsFromCharset}
     restart={() => (gameStarted = false)}
     end={() => navigate("/", { replace: true })}

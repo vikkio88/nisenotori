@@ -17,8 +17,8 @@
   export let optionsFromCharset = false;
   export let type = GUESS_GAME_TYPES.AUDIO;
   export let charset = BASE;
-  let picks = optionsFromCharset ? [...charset] : [...BASE];
   export let options = 4;
+  let picks = optionsFromCharset ? [...charset] : [...BASE];
   export let restart = () => {
     console.log("restart");
   };
