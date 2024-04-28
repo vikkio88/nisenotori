@@ -41,21 +41,19 @@
 
     let baseRowsView = [...baseRows];
     let dakuonRowsView = [...dakuonRows];
-
     let filterTxt = "";
-
-    $: {
-        console.log(filterTxt);
+    function onFilter() {
+        dakuonRowsView = [...dakuonRows];
+        baseRowsView = [...baseRows];
+        
         if (Boolean(filterTxt)) {
+            // @ts-ignore
             baseRowsView = baseRowsView.map((r) =>
                 r.filter((l) => l && l.includes(filterTxt.toLowerCase())),
             );
             dakuonRowsView = dakuonRowsView.map((r) =>
                 r.filter((l) => l && l.includes(filterTxt.toLowerCase())),
             );
-        } else {
-            dakuonRowsView = [...dakuonRows];
-            baseRowsView = [...baseRows];
         }
     }
 
@@ -79,9 +77,14 @@
     <input
         type="text"
         bind:value={filterTxt}
+        on:input={onFilter}
         placeholder="Filter syllables..."
     />
-    <button class="danger" disabled={!Boolean(filterTxt)} on:click={() => (filterTxt = "")}>
+    <button
+        class="danger"
+        disabled={!Boolean(filterTxt)}
+        on:click={() => (filterTxt = "")}
+    >
         Reset
     </button>
 </div>
