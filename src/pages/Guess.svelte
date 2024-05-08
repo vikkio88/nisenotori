@@ -13,6 +13,7 @@
   let selectedGameType = GUESS_GAME_TYPES.AUDIO;
   let optionsFromCharset = true;
   let options = 4;
+  let crossGuess = false;
 
   let gameStarted = false;
 </script>
@@ -33,6 +34,15 @@
 
     <div class="f cc g_5 mg">
       <h3>Game Options</h3>
+      <div class="fi g_5">
+        <label
+          for="crossGuess"
+          title="The answers will be shown in the opposite Kana"
+        >
+          Cross Guess Kana
+        </label>
+        <input type="checkbox" name="crossGuess" bind:checked={crossGuess} />
+      </div>
       <div class="fi g_5">
         <label
           for="optionsPicks"
@@ -72,6 +82,7 @@
   <Game
     charset={CHARSETS[selectedCharsetIndex].charset}
     kataChoice={kata}
+    crossKanaGuess={crossGuess}
     type={selectedGameType}
     {options}
     {optionsFromCharset}

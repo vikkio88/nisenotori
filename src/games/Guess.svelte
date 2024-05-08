@@ -14,6 +14,7 @@
   let finalResult = null;
 
   export let kataChoice = HIRAGANA;
+  export let crossKanaGuess = false;
   export let optionsFromCharset = false;
   export let type = GUESS_GAME_TYPES.AUDIO;
   export let charset = BASE;
@@ -74,8 +75,8 @@
       lastCorrect = false;
     }
 
-    charset = charset.filter(removeCurrentRomaji(currentQuiz.kata));
     setTimeout(() => {
+      charset = charset.filter(removeCurrentRomaji(currentQuiz.kata));
       canGuess = true;
       if (charset.length < 1) {
         finalResult = result.result();
@@ -89,7 +90,24 @@
         gameType: type,
         picks,
       });
-    }, 500);
+    }, 900);
+  }
+
+  function getCorrectAnswer(currentQuiz) {
+    if (currentQuiz.guessType === GUESS_GAME_TYPES.AUDIO) {
+      return kataChoice === HIRAGANA
+        ? currentQuiz.kata.hiragana
+        : currentQuiz.kata.katakana;
+    }
+
+    // Syllable
+    if (crossKanaGuess) {
+      return kataChoice === HIRAGANA
+        ? currentQuiz.kata.katakana
+        : currentQuiz.kata.hiragana;
+    }
+
+    return currentQuiz.kata.romaji;
   }
 </script>
 
@@ -137,7 +155,15 @@
       {#each currentQuiz.possibleKatas as r}
         <button class="big" on:click={() => guess(r)} disabled={!canGuess}>
           {#if currentQuiz.guessType === GUESS_GAME_TYPES.SYLLABLES}
-            {KATA_MAP[r].romajiLabel || KATA_MAP[r].romaji}
+            {#if crossKanaGuess}
+              {#if kataChoice === HIRAGANA}
+                {KATA_MAP[r].katakana}
+              {:else}
+                {KATA_MAP[r].hiragana}
+              {/if}
+            {:else}
+              {KATA_MAP[r].romajiLabel || KATA_MAP[r].romaji}
+            {/if}
           {:else if currentQuiz.guessType === GUESS_GAME_TYPES.AUDIO}
             {#if kataChoice === HIRAGANA}
               {KATA_MAP[r].hiragana}
@@ -150,12 +176,13 @@
     </div>
   </div>
   <div
-    class="result pulse"
+    class="result pulse f cc"
     class:hide={canGuess}
     class:correct={lastCorrect}
     class:wrong={!lastCorrect}
   >
     {`${lastCorrect ? "Correct" : `Wrong`}`}
+    <h1>{getCorrectAnswer(currentQuiz)}</h1>
   </div>
 {/if}
 
