@@ -1,4 +1,5 @@
 import './app.css';
+import './animations.css';
 import App from './App.svelte';
 
 

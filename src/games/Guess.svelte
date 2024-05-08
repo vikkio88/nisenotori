@@ -19,6 +19,7 @@
   export let charset = BASE;
   export let options = 4;
   let picks = optionsFromCharset ? [...charset] : [...BASE];
+
   export let restart = () => {
     console.log("restart");
   };
@@ -32,6 +33,9 @@
     gameType: type,
     picks,
   });
+
+  let canGuess = true;
+  let lastCorrect = null;
 
   let audio = null;
   $: {
@@ -61,26 +65,31 @@
    * @param {string} romaji
    */
   function guess(romaji) {
+    canGuess = false;
     if (currentQuiz.kata.romaji === romaji) {
       result.markCorrect(currentQuiz.kata);
+      lastCorrect = true;
     } else {
       result.markWrong(currentQuiz.kata);
+      lastCorrect = false;
     }
 
     charset = charset.filter(removeCurrentRomaji(currentQuiz.kata));
+    setTimeout(() => {
+      canGuess = true;
+      if (charset.length < 1) {
+        finalResult = result.result();
+        gameFinished = true;
+        return;
+      }
 
-    if (charset.length < 1) {
-      finalResult = result.result();
-      gameFinished = true;
-      return;
-    }
-
-    currentQuiz = getNewGuessingSet({
-      charset,
-      options,
-      gameType: type,
-      picks,
-    });
+      currentQuiz = getNewGuessingSet({
+        charset,
+        options,
+        gameType: type,
+        picks,
+      });
+    }, 500);
   }
 </script>
 
@@ -120,11 +129,13 @@
         katakana={kataChoice === KATAKANA}
       />
     {:else if currentQuiz.guessType === GUESS_GAME_TYPES.AUDIO}
-      <button class="huge success" on:click={play}>🔊</button>
+      <button disabled={!canGuess} class="huge success" on:click={play}>
+        🔊
+      </button>
     {/if}
     <div class="fi mg2 g_5">
       {#each currentQuiz.possibleKatas as r}
-        <button class="big" on:click={() => guess(r)}>
+        <button class="big" on:click={() => guess(r)} disabled={!canGuess}>
           {#if currentQuiz.guessType === GUESS_GAME_TYPES.SYLLABLES}
             {KATA_MAP[r].romajiLabel || KATA_MAP[r].romaji}
           {:else if currentQuiz.guessType === GUESS_GAME_TYPES.AUDIO}
@@ -138,11 +149,34 @@
       {/each}
     </div>
   </div>
+  <div
+    class="result pulse"
+    class:hide={canGuess}
+    class:correct={lastCorrect}
+    class:wrong={!lastCorrect}
+  >
+    {`${lastCorrect ? "Correct" : `Wrong`}`}
+  </div>
 {/if}
 
 <style>
   .huge {
     font-size: 5rem;
     padding: 4rem;
+  }
+
+  .result {
+    font-size: 2rem;
+  }
+
+  .correct {
+    color: var(--success-color);
+  }
+  .wrong {
+    color: var(--danger-color);
+  }
+
+  .hide {
+    visibility: hidden;
   }
 </style>
