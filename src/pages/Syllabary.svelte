@@ -49,10 +49,10 @@
     if (Boolean(filterTxt)) {
       // @ts-ignore
       baseRowsView = baseRowsView.map((r) =>
-        r.filter((l) => l && l.includes(filterTxt.toLowerCase()))
+        r.filter((l) => l && l.includes(filterTxt.toLowerCase())),
       );
       dakuonRowsView = dakuonRowsView.map((r) =>
-        r.filter((l) => l && l.includes(filterTxt.toLowerCase()))
+        r.filter((l) => l && l.includes(filterTxt.toLowerCase())),
       );
     }
   }
@@ -114,7 +114,7 @@
 {#each dakuonRowsView as row}
   <div class="f r row">
     {#each row as syllable}
-      <div class="f1 f c">
+      <div class="f1 f c item">
         <Symbol
           button
           on:click={() => navigate(`/${kata}/${KATA_MAP[syllable].romaji}`)}
@@ -136,15 +136,14 @@
     margin-bottom: 1rem;
   }
   .spacer {
-    padding: 2.4rem;
+    padding: 2.35rem;
   }
 
   .row {
-    margin: 0.5rem 0.5rem;
+    margin-top: .5rem;
   }
 
-  .item {
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
+  .item + .item {
+    margin-left: .1rem;
   }
 </style>
