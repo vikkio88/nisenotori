@@ -75,6 +75,9 @@ export const CHARSETS = [
 
     { label: 'Only Daukon', charset: DAKUON },
     { label: 'Combo', charset: COMBO },
+
+    { label: 'Hiragana Lookalike', charset: [r.KI, r.SA, r.SO, r.RO, r.RU, r.RE, r.RA, r.CHI, r.WA, r.NE, r.NU] },
+    { label: 'Katakana Lookalike', charset: [r.KE, r.KU, r.SO, r.CHI, r.FU, r.SHI, r.TSU, r.YU, r.KO, r.WO, r.WA, r.N, r.RA, r.TE] },
 ];
 
 export const charsetOptions = CHARSETS.map((c, i) => ({ value: i, ...c }));
