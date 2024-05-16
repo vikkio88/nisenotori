@@ -6,11 +6,21 @@
   import Kata from "./pages/Kata.svelte";
   import { HIRAGANA, KATAKANA } from "./libs/data/consts";
   import Guess from "./pages/Guess.svelte";
+  import createUserStore from "./store/user";
 
   let url = "";
+  let userStore = createUserStore();
 </script>
 
 <main class="f cs">
+  {#if Boolean($userStore.user)}
+    <h3>{$userStore.user.name}</h3>
+    <button class="small danger" on:click={() => userStore.logout()}>Logout</button>
+  {:else}
+    <button class="small success" on:click={() => userStore.login('User')}>
+      Login
+    </button>
+  {/if}
   <Router {url}>
     <Route path="/" component={Dash} />
     <Route path="/syllabary" component={Syllabary} />
