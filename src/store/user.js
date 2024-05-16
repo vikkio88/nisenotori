@@ -4,7 +4,7 @@ const user = null;
 const stats = null;
 const USER_STORE_KEY = 'USER_INFO';
 
-export default function createUserStore() {
+function createUserStore() {
     let userInfo = window.localStorage.getItem(USER_STORE_KEY);
 
     const { set: storeSet, subscribe } = writable({ ...(Boolean(userInfo) ? JSON.parse(userInfo) : { user, stats }) });
@@ -26,4 +26,7 @@ export default function createUserStore() {
         }
     };
 
-}; 
+};
+
+const userInfo = createUserStore();
+export default userInfo;

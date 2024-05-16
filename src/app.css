@@ -298,6 +298,7 @@ button.big {
     padding: 2rem 3rem;
     font-size: 1.5rem;
 }
+
 button.small {
     padding: 0.3rem 1rem;
     font-size: .8rem;
@@ -314,4 +315,13 @@ input[type="checkbox"] {
 
 input[type="radio"] {
     transform: scale(1.5);
+}
+
+/** More stuff for Tinchi **/
+.ftr {
+    padding: var(--pad);
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
