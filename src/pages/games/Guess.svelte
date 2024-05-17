@@ -1,11 +1,11 @@
 <script>
   import { navigate } from "svelte-routing";
-  import Select from "../components/shared/Select.svelte";
-  import SyllabarySelector from "../components/shared/SyllabarySelector.svelte";
-  import Game from "../games/Guess.svelte";
-  import { CHARSETS, charsetOptions } from "../libs/data/charSets";
-  import { HIRAGANA } from "../libs/data/consts";
-  import { GUESS_GAME_TYPES, guessGameTypes } from "../games/utils/guess";
+  import Select from "../../components/shared/Select.svelte";
+  import SyllabarySelector from "../../components/shared/SyllabarySelector.svelte";
+  import Game from "../../games/Guess.svelte";
+  import { CHARSETS, charsetOptions } from "../../libs/data/charSets";
+  import { HIRAGANA } from "../../libs/data/consts";
+  import { GUESS_GAME_TYPES, guessGameTypes } from "../../games/utils/guess";
 
   let kata = HIRAGANA;
   let selectedCharsetIndex = 0;

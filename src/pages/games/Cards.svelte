@@ -1,10 +1,10 @@
 <script>
   import { navigate } from "svelte-routing";
-  import Select from "../components/shared/Select.svelte";
-  import CardsMemo from "../games/CardsMemo.svelte";
-  import { CHARSETS, charsetOptions } from "../libs/data/charSets";
-  import { HIRAGANA } from "../libs/data/consts";
-  import SyllabarySelector from "../components/shared/SyllabarySelector.svelte";
+  import Select from "../../components/shared/Select.svelte";
+  import CardsMemo from "../../games/CardsMemo.svelte";
+  import { CHARSETS, charsetOptions } from "../../libs/data/charSets";
+  import { HIRAGANA } from "../../libs/data/consts";
+  import SyllabarySelector from "../../components/shared/SyllabarySelector.svelte";
 
   let gameStarted = false;
 
