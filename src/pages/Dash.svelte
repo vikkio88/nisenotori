@@ -24,6 +24,8 @@
   <div class="fwc g_5">
     <button class="big" on:click={() => navigate("/cards")}>Cards</button>
     <button class="big" on:click={() => navigate("/guess")}>Guess</button>
-    <button class="big" on:click={() => navigate("/guess")} disabled>Katakatype</button>
+    <button class="big" on:click={() => navigate("/katakatype")}>
+      Katakatype
+    </button>
   </div>
 </div>

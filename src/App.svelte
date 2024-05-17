@@ -7,6 +7,7 @@
   import { HIRAGANA, KATAKANA } from "./libs/data/consts";
   import Guess from "./pages/games/Guess.svelte";
   import Account from "./pages/Account.svelte";
+  import KatakaType from "./pages/games/KatakaType.svelte";
 
   let url = "";
 </script>
@@ -15,7 +16,7 @@
   <Router {url}>
     <Route path="/" component={Dash} />
     <Route path="/account" component={Account} />
-    
+
     <!-- Learning -->
     <Route path="/syllabary" component={Syllabary} />
     <Route path="/hiragana/:romaji" let:params>
@@ -24,10 +25,11 @@
     <Route path="/katakana/:romaji" let:params>
       <Kata romaji={params.romaji} kata={KATAKANA} />
     </Route>
-    
+
     <!-- Games -->
     <Route path="/cards" component={Cards} />
     <Route path="/guess" component={Guess} />
+    <Route path="/katakatype" component={KatakaType} />
   </Router>
 </main>
 
