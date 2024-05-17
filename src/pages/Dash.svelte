@@ -2,15 +2,15 @@
   import { navigate } from "svelte-routing";
   import { KATA_MAP, ROMAJI_CHARS } from "../libs/data/kataMap";
   import AccountBadge from "../components/AccountBadge.svelte";
+  import Title from "../components/shared/Title.svelte";
+  Title;
 </script>
 
-<div class="ftr">
+<div class="pos-atr">
   <AccountBadge />
 </div>
 
-<h1 title="偽の鳥">Nise no tori</h1>
-<h2 title="Fake Bird">偽の鳥</h2>
-
+<Title />
 <div class="f cc f1 g">
   <h2>Learning</h2>
   <button class="big success" on:click={() => navigate("/syllabary")}>
@@ -21,6 +21,9 @@
 </div>
 <div class="f cc f1 g">
   <h2>Games</h2>
-  <button class="big" on:click={() => navigate("/cards")}>Cards</button>
-  <button class="big" on:click={() => navigate("/guess")}>Guess</button>
+  <div class="fwc g_5">
+    <button class="big" on:click={() => navigate("/cards")}>Cards</button>
+    <button class="big" on:click={() => navigate("/guess")}>Guess</button>
+    <button class="big" on:click={() => navigate("/guess")} disabled>Katakatype</button>
+  </div>
 </div>
