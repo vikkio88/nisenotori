@@ -1,7 +1,7 @@
 import fs from "fs";
 
 //https://raw.githubusercontent.com/davidluzgouveia/kanji-data/master/kanji-jouyou.json
-const file = fs.readFileSync('./scripts/data/joyokanji.json').toString();
+const file = fs.readFileSync('./scripts/data/kanji-jouyou.json').toString();
 const kanjis = JSON.parse(file);
 
 console.log(`got ${Object.keys(kanjis).length} kanjis`);
@@ -22,4 +22,12 @@ for (const k of Object.keys(kanjis)) {
 
 groups.byFreq = groups.byFreq.sort((i, o) => o.f - i.f);
 
-fs.writeFileSync('./scripts/data/parsed.json', JSON.stringify(groups));
+fs.writeFileSync('./scripts/data/kanji-groups.json', JSON.stringify(groups));
+const files = [
+    'kanji-groups',
+    'words',
+    'kanji-jouyou',
+];
+for (const file of files) {
+    fs.copyFileSync(`./scripts/data/${file}.json`, `public/assets/data/${file}.json`);
+}
