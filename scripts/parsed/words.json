@@ -1,0 +1,1525 @@
+{
+    "katakanaWords": [
+        {
+            "word": "ピザ",
+            "romaji": "pi za",
+            "meaning": "pizza",
+            "length": 2,
+            "syllables": [
+                "ピ",
+                "ザ"
+            ]
+        },
+        {
+            "word": "テレビ",
+            "romaji": "te re bi",
+            "meaning": "television",
+            "length": 3,
+            "syllables": [
+                "テ",
+                "レ",
+                "ビ"
+            ]
+        },
+        {
+            "word": "バス",
+            "romaji": "ba su",
+            "meaning": "bus",
+            "length": 2,
+            "syllables": [
+                "バ",
+                "ス"
+            ]
+        },
+        {
+            "word": "パン",
+            "romaji": "pan",
+            "meaning": "bread",
+            "length": 2,
+            "syllables": [
+                "パ",
+                "ン"
+            ]
+        },
+        {
+            "word": "コーヒー",
+            "romaji": "kō hī",
+            "meaning": "coffee",
+            "length": 4,
+            "syllables": [
+                "コー",
+                "ヒー"
+            ]
+        },
+        {
+            "word": "ジュース",
+            "romaji": "jū su",
+            "meaning": "juice",
+            "length": 4,
+            "syllables": [
+                "ジュ",
+                "ース"
+            ]
+        },
+        {
+            "word": "コンピュータ",
+            "romaji": "kon pyū ta",
+            "meaning": "computer",
+            "length": 6,
+            "syllables": [
+                "コン",
+                "ピュ",
+                "ー",
+                "タ"
+            ]
+        },
+        {
+            "word": "タクシー",
+            "romaji": "ta ku shī",
+            "meaning": "taxi",
+            "length": 4,
+            "syllables": [
+                "タ",
+                "ク",
+                "シー"
+            ]
+        },
+        {
+            "word": "スマートフォン",
+            "romaji": "su mā to fon",
+            "meaning": "smartphone",
+            "length": 6,
+            "syllables": [
+                "スマー",
+                "ト",
+                "フォ",
+                "ン"
+            ]
+        },
+        {
+            "word": "アイスクリーム",
+            "romaji": "a i su ku rī mu",
+            "meaning": "ice cream",
+            "length": 7,
+            "syllables": [
+                "アイス",
+                "ク",
+                "リー",
+                "ム"
+            ]
+        },
+        {
+            "word": "サンドイッチ",
+            "romaji": "san do it chi",
+            "meaning": "sandwich",
+            "length": 6,
+            "syllables": [
+                "サンド",
+                "イッ",
+                "チ"
+            ]
+        },
+        {
+            "word": "カメラ",
+            "romaji": "ka me ra",
+            "meaning": "camera",
+            "length": 3,
+            "syllables": [
+                "カ",
+                "メ",
+                "ラ"
+            ]
+        },
+        {
+            "word": "ホテル",
+            "romaji": "ho te ru",
+            "meaning": "hotel",
+            "length": 3,
+            "syllables": [
+                "ホ",
+                "テ",
+                "ル"
+            ]
+        },
+        {
+            "word": "ペン",
+            "romaji": "pen",
+            "meaning": "pen",
+            "length": 2,
+            "syllables": [
+                "ペ",
+                "ン"
+            ]
+        },
+        {
+            "word": "ゲーム",
+            "romaji": "gē mu",
+            "meaning": "game",
+            "length": 3,
+            "syllables": [
+                "ゲー",
+                "ム"
+            ]
+        },
+        {
+            "word": "スーパー",
+            "romaji": "sū pā",
+            "meaning": "supermarket",
+            "length": 4,
+            "syllables": [
+                "スー",
+                "パー"
+            ]
+        },
+        {
+            "word": "タブレット",
+            "romaji": "ta bu ret to",
+            "meaning": "tablet",
+            "length": 5,
+            "syllables": [
+                "タ",
+                "ブ",
+                "レッ",
+                "ト"
+            ]
+        },
+        {
+            "word": "インターネット",
+            "romaji": "in tā net to",
+            "meaning": "internet",
+            "length": 7,
+            "syllables": [
+                "イン",
+                "ター",
+                "ネット"
+            ]
+        },
+        {
+            "word": "レストラン",
+            "romaji": "re su to ran",
+            "meaning": "restaurant",
+            "length": 5,
+            "syllables": [
+                "レス",
+                "ト",
+                "ラ",
+                "ン"
+            ]
+        },
+        {
+            "word": "ビール",
+            "romaji": "bī ru",
+            "meaning": "beer",
+            "length": 3,
+            "syllables": [
+                "ビー",
+                "ル"
+            ]
+        },
+        {
+            "word": "ワイン",
+            "romaji": "wa in",
+            "meaning": "wine",
+            "length": 3,
+            "syllables": [
+                "ワ",
+                "イン"
+            ]
+        },
+        {
+            "word": "チョコレート",
+            "romaji": "cho ko rē to",
+            "meaning": "chocolate",
+            "length": 6,
+            "syllables": [
+                "チョ",
+                "コ",
+                "レー",
+                "ト"
+            ]
+        },
+        {
+            "word": "サラダ",
+            "romaji": "sa ra da",
+            "meaning": "salad",
+            "length": 3,
+            "syllables": [
+                "サ",
+                "ラ",
+                "ダ"
+            ]
+        },
+        {
+            "word": "ソファ",
+            "romaji": "so fa",
+            "meaning": "sofa",
+            "length": 3,
+            "syllables": [
+                "ソ",
+                "ファ"
+            ]
+        },
+        {
+            "word": "ベッド",
+            "romaji": "bed do",
+            "meaning": "bed",
+            "length": 3,
+            "syllables": [
+                "ベッ",
+                "ド"
+            ]
+        },
+        {
+            "word": "シャツ",
+            "romaji": "sha tsu",
+            "meaning": "shirt",
+            "length": 3,
+            "syllables": [
+                "シャ",
+                "ツ"
+            ]
+        },
+        {
+            "word": "ズボン",
+            "romaji": "zu bon",
+            "meaning": "trousers",
+            "length": 3,
+            "syllables": [
+                "ズ",
+                "ボ",
+                "ン"
+            ]
+        },
+        {
+            "word": "スカート",
+            "romaji": "su kā to",
+            "meaning": "skirt",
+            "length": 4,
+            "syllables": [
+                "ス",
+                "カー",
+                "ト"
+            ]
+        },
+        {
+            "word": "ネクタイ",
+            "romaji": "ne ku ta i",
+            "meaning": "necktie",
+            "length": 4,
+            "syllables": [
+                "ネ",
+                "ク",
+                "タイ"
+            ]
+        },
+        {
+            "word": "サングラス",
+            "romaji": "san gu ra su",
+            "meaning": "sunglasses",
+            "length": 5,
+            "syllables": [
+                "サン",
+                "グ",
+                "ラ",
+                "ス"
+            ]
+        },
+        {
+            "word": "ドレス",
+            "romaji": "do re su",
+            "meaning": "dress",
+            "length": 3,
+            "syllables": [
+                "ド",
+                "レ",
+                "ス"
+            ]
+        },
+        {
+            "word": "ジャケット",
+            "romaji": "ja ket to",
+            "meaning": "jacket",
+            "length": 4,
+            "syllables": [
+                "ジャ",
+                "ケ",
+                "ッ",
+                "ト"
+            ]
+        },
+        {
+            "word": "ブーツ",
+            "romaji": "bū tsu",
+            "meaning": "boots",
+            "length": 3,
+            "syllables": [
+                "ブー",
+                "ツ"
+            ]
+        },
+        {
+            "word": "パソコン",
+            "romaji": "pa so kon",
+            "meaning": "personal computer",
+            "length": 4,
+            "syllables": [
+                "パ",
+                "ソ",
+                "コ",
+                "ン"
+            ]
+        },
+        {
+            "word": "メール",
+            "romaji": "mē ru",
+            "meaning": "email",
+            "length": 3,
+            "syllables": [
+                "メー",
+                "ル"
+            ]
+        },
+        {
+            "word": "カフェ",
+            "romaji": "ka fe",
+            "meaning": "cafe",
+            "length": 3,
+            "syllables": [
+                "カ",
+                "フェ"
+            ]
+        },
+        {
+            "word": "レモン",
+            "romaji": "re mon",
+            "meaning": "lemon",
+            "length": 3,
+            "syllables": [
+                "レ",
+                "モ",
+                "ン"
+            ]
+        },
+        {
+            "word": "バナナ",
+            "romaji": "ba na na",
+            "meaning": "banana",
+            "length": 3,
+            "syllables": [
+                "バ",
+                "ナ",
+                "ナ"
+            ]
+        },
+        {
+            "word": "オレンジ",
+            "romaji": "o ren ji",
+            "meaning": "orange",
+            "length": 4,
+            "syllables": [
+                "オ",
+                "レ",
+                "ン",
+                "ジ"
+            ]
+        },
+        {
+            "word": "アパート",
+            "romaji": "a pā to",
+            "meaning": "apartment",
+            "length": 4,
+            "syllables": [
+                "ア",
+                "パー",
+                "ト"
+            ]
+        },
+        {
+            "word": "デパート",
+            "romaji": "de pā to",
+            "meaning": "department store",
+            "length": 4,
+            "syllables": [
+                "デ",
+                "パー",
+                "ト"
+            ]
+        },
+        {
+            "word": "ガソリン",
+            "romaji": "ga so rin",
+            "meaning": "gasoline",
+            "length": 4,
+            "syllables": [
+                "ガ",
+                "ソ",
+                "リン"
+            ]
+        },
+        {
+            "word": "バイク",
+            "romaji": "ba i ku",
+            "meaning": "motorbike",
+            "length": 3,
+            "syllables": [
+                "バ",
+                "イ",
+                "ク"
+            ]
+        },
+        {
+            "word": "カレー",
+            "romaji": "ka rē",
+            "meaning": "curry",
+            "length": 3,
+            "syllables": [
+                "カ",
+                "レー"
+            ]
+        },
+        {
+            "word": "スプーン",
+            "romaji": "su pū n",
+            "meaning": "spoon",
+            "length": 4,
+            "syllables": [
+                "ス",
+                "プー",
+                "ン"
+            ]
+        },
+        {
+            "word": "フォーク",
+            "romaji": "fō ku",
+            "meaning": "fork",
+            "length": 3,
+            "syllables": [
+                "フォー",
+                "ク"
+            ]
+        },
+        {
+            "word": "ナイフ",
+            "romaji": "na i fu",
+            "meaning": "knife",
+            "length": 3,
+            "syllables": [
+                "ナ",
+                "イ",
+                "フ"
+            ]
+        },
+        {
+            "word": "カップ",
+            "romaji": "ka ppu",
+            "meaning": "cup",
+            "length": 3,
+            "syllables": [
+                "カ",
+                "ッ",
+                "プ"
+            ]
+        },
+        {
+            "word": "テーブル",
+            "romaji": "tē bu ru",
+            "meaning": "table",
+            "length": 4,
+            "syllables": [
+                "テー",
+                "ブ",
+                "ル"
+            ]
+        },
+        {
+            "word": "チェア",
+            "romaji": "che a",
+            "meaning": "chair",
+            "length": 3,
+            "syllables": [
+                "チェ",
+                "ア"
+            ]
+        },
+        {
+            "word": "ペット",
+            "romaji": "pe tto",
+            "meaning": "pet",
+            "length": 3,
+            "syllables": [
+                "ペ",
+                "ッ",
+                "ト"
+            ]
+        }
+    ],
+    "hiraganaWords": [
+        {
+            "word": "ありがとう",
+            "kanji": "有難う",
+            "romaji": "a ri ga tō u",
+            "meaning": "thank you",
+            "length": 5,
+            "syllables": [
+                "あ",
+                "り",
+                "が",
+                "と",
+                "う"
+            ]
+        },
+        {
+            "word": "こんにちは",
+            "kanji": "今日は",
+            "romaji": "ko n ni chi ha",
+            "meaning": "hello",
+            "length": 5,
+            "syllables": [
+                "こ",
+                "ん",
+                "に",
+                "ち",
+                "は"
+            ]
+        },
+        {
+            "word": "さようなら",
+            "kanji": "左様なら",
+            "romaji": "sa yo u na ra",
+            "meaning": "goodbye",
+            "length": 5,
+            "syllables": [
+                "さ",
+                "よ",
+                "う",
+                "な",
+                "ら"
+            ]
+        },
+        {
+            "word": "おはよう",
+            "kanji": "お早う",
+            "romaji": "o ha yo u",
+            "meaning": "good morning",
+            "length": 4,
+            "syllables": [
+                "お",
+                "は",
+                "よ",
+                "う"
+            ]
+        },
+        {
+            "word": "こんばんは",
+            "kanji": "今晩は",
+            "romaji": "kon ban wa",
+            "meaning": "good evening",
+            "length": 5,
+            "syllables": [
+                "こん",
+                "ば",
+                "ん",
+                "は"
+            ]
+        },
+        {
+            "word": "いただきます",
+            "kanji": "頂きます",
+            "romaji": "i ta da ki ma su",
+            "meaning": "thanks for the meal",
+            "length": 7,
+            "syllables": [
+                "い",
+                "た",
+                "だ",
+                "き",
+                "ま",
+                "す"
+            ]
+        },
+        {
+            "word": "おねがいします",
+            "kanji": "お願いします",
+            "romaji": "o ne ga i shi ma su",
+            "meaning": "please",
+            "length": 6,
+            "syllables": [
+                "お",
+                "ね",
+                "が",
+                "い",
+                "し",
+                "ま",
+                "す"
+            ]
+        },
+        {
+            "word": "すみません",
+            "kanji": "済みません",
+            "romaji": "su mi ma sen",
+            "meaning": "excuse me / I'm sorry",
+            "length": 5,
+            "syllables": [
+                "す",
+                "み",
+                "ま",
+                "せ",
+                "ん"
+            ]
+        },
+        {
+            "word": "はい",
+            "kanji": null,
+            "romaji": "ha i",
+            "meaning": "yes",
+            "length": 2,
+            "syllables": [
+                "は",
+                "い"
+            ]
+        },
+        {
+            "word": "いいえ",
+            "kanji": null,
+            "romaji": "i i e",
+            "meaning": "no",
+            "length": 3,
+            "syllables": [
+                "い",
+                "い",
+                "え"
+            ]
+        },
+        {
+            "word": "どうぞ",
+            "kanji": null,
+            "romaji": "dō zo",
+            "meaning": "please",
+            "length": 3,
+            "syllables": [
+                "ど",
+                "う",
+                "ぞ"
+            ]
+        },
+        {
+            "word": "おなまえ",
+            "kanji": "お名前",
+            "romaji": "o na ma e",
+            "meaning": "name",
+            "length": 4,
+            "syllables": [
+                "お",
+                "な",
+                "ま",
+                "え"
+            ]
+        },
+        {
+            "word": "ここ",
+            "kanji": null,
+            "romaji": "ko ko",
+            "meaning": "here",
+            "length": 2,
+            "syllables": [
+                "こ",
+                "こ"
+            ]
+        },
+        {
+            "word": "そこ",
+            "kanji": null,
+            "romaji": "so ko",
+            "meaning": "there",
+            "length": 2,
+            "syllables": [
+                "そ",
+                "こ"
+            ]
+        },
+        {
+            "word": "あそこ",
+            "kanji": null,
+            "romaji": "a so ko",
+            "meaning": "over there",
+            "length": 3,
+            "syllables": [
+                "あ",
+                "そ",
+                "こ"
+            ]
+        },
+        {
+            "word": "これ",
+            "kanji": null,
+            "romaji": "ko re",
+            "meaning": "this",
+            "length": 2,
+            "syllables": [
+                "こ",
+                "れ"
+            ]
+        },
+        {
+            "word": "それ",
+            "kanji": null,
+            "romaji": "so re",
+            "meaning": "that",
+            "length": 2,
+            "syllables": [
+                "そ",
+                "れ"
+            ]
+        },
+        {
+            "word": "あれ",
+            "kanji": null,
+            "romaji": "a re",
+            "meaning": "that over there",
+            "length": 2,
+            "syllables": [
+                "あ",
+                "れ"
+            ]
+        },
+        {
+            "word": "どれ",
+            "kanji": null,
+            "romaji": "do re",
+            "meaning": "which one",
+            "length": 2,
+            "syllables": [
+                "ど",
+                "れ"
+            ]
+        },
+        {
+            "word": "これら",
+            "kanji": null,
+            "romaji": "ko re ra",
+            "meaning": "these",
+            "length": 3,
+            "syllables": [
+                "こ",
+                "れ",
+                "ら"
+            ]
+        },
+        {
+            "word": "それら",
+            "kanji": null,
+            "romaji": "so re ra",
+            "meaning": "those",
+            "length": 3,
+            "syllables": [
+                "そ",
+                "れ",
+                "ら"
+            ]
+        },
+        {
+            "word": "あれら",
+            "kanji": null,
+            "romaji": "a re ra",
+            "meaning": "those over there",
+            "length": 3,
+            "syllables": [
+                "あ",
+                "れ",
+                "ら"
+            ]
+        },
+        {
+            "word": "どれら",
+            "kanji": null,
+            "romaji": "do re ra",
+            "meaning": "which ones",
+            "length": 3,
+            "syllables": [
+                "ど",
+                "れ",
+                "ら"
+            ]
+        },
+        {
+            "word": "これから",
+            "kanji": null,
+            "romaji": "ko re ka ra",
+            "meaning": "from now on",
+            "length": 4,
+            "syllables": [
+                "こ",
+                "れ",
+                "か",
+                "ら"
+            ]
+        },
+        {
+            "word": "そこで",
+            "kanji": null,
+            "romaji": "so ko de",
+            "meaning": "therefore",
+            "length": 4,
+            "syllables": [
+                "そ",
+                "こ",
+                "で"
+            ]
+        },
+        {
+            "word": "だれ",
+            "kanji": "誰",
+            "romaji": "da re",
+            "meaning": "who",
+            "length": 2,
+            "syllables": [
+                "だ",
+                "れ"
+            ]
+        },
+        {
+            "word": "なに",
+            "kanji": "何",
+            "romaji": "na ni",
+            "meaning": "what",
+            "length": 2,
+            "syllables": [
+                "な",
+                "に"
+            ]
+        },
+        {
+            "word": "どこ",
+            "kanji": "何処",
+            "romaji": "do ko",
+            "meaning": "where",
+            "length": 2,
+            "syllables": [
+                "ど",
+                "こ"
+            ]
+        },
+        {
+            "word": "いつ",
+            "kanji": "何時",
+            "romaji": "i tsu",
+            "meaning": "when",
+            "length": 2,
+            "syllables": [
+                "い",
+                "つ"
+            ]
+        },
+        {
+            "word": "なぜ",
+            "kanji": "何故",
+            "romaji": "na ze",
+            "meaning": "why",
+            "length": 2,
+            "syllables": [
+                "な",
+                "ぜ"
+            ]
+        },
+        {
+            "word": "どうして",
+            "kanji": null,
+            "romaji": "dō shi te",
+            "meaning": "how",
+            "length": 4,
+            "syllables": [
+                "ど",
+                "う",
+                "し",
+                "て"
+            ]
+        },
+        {
+            "word": "ともだち",
+            "kanji": "友達",
+            "romaji": "to mo da chi",
+            "meaning": "friend",
+            "length": 5,
+            "syllables": [
+                "と",
+                "も",
+                "だ",
+                "ち"
+            ]
+        },
+        {
+            "word": "かぞく",
+            "kanji": "家族",
+            "romaji": "ka zo ku",
+            "meaning": "family",
+            "length": 4,
+            "syllables": [
+                "か",
+                "ぞ",
+                "く"
+            ]
+        },
+        {
+            "word": "いぬ",
+            "kanji": "犬",
+            "romaji": "i nu",
+            "meaning": "dog",
+            "length": 2,
+            "syllables": [
+                "い",
+                "ぬ"
+            ]
+        },
+        {
+            "word": "ねこ",
+            "kanji": "猫",
+            "romaji": "ne ko",
+            "meaning": "cat",
+            "length": 2,
+            "syllables": [
+                "ね",
+                "こ"
+            ]
+        },
+        {
+            "word": "うみ",
+            "kanji": "海",
+            "romaji": "u mi",
+            "meaning": "sea",
+            "length": 2,
+            "syllables": [
+                "う",
+                "み"
+            ]
+        },
+        {
+            "word": "そら",
+            "kanji": "空",
+            "romaji": "so ra",
+            "meaning": "sky",
+            "length": 2,
+            "syllables": [
+                "そ",
+                "ら"
+            ]
+        },
+        {
+            "word": "きりん",
+            "kanji": null,
+            "romaji": "ki rin",
+            "meaning": "giraffe",
+            "length": 3,
+            "syllables": [
+                "き",
+                "り",
+                "ん"
+            ]
+        },
+        {
+            "word": "ぞう",
+            "kanji": "象",
+            "romaji": "zō",
+            "meaning": "elephant",
+            "length": 2,
+            "syllables": [
+                "ぞ",
+                "う"
+            ]
+        },
+        {
+            "word": "さかな",
+            "kanji": "魚",
+            "romaji": "sa ka na",
+            "meaning": "fish",
+            "length": 3,
+            "syllables": [
+                "さ",
+                "か",
+                "な"
+            ]
+        },
+        {
+            "word": "さくらんぼ",
+            "kanji": "桜んぼ",
+            "romaji": "sa ku ra n bo",
+            "meaning": "cherry",
+            "length": 5,
+            "syllables": [
+                "さ",
+                "く",
+                "ら",
+                "ん",
+                "ぼ"
+            ]
+        },
+        {
+            "word": "りんご",
+            "kanji": "林檎",
+            "romaji": "ri n go",
+            "meaning": "apple",
+            "length": 3,
+            "syllables": [
+                "り",
+                "ん",
+                "ご"
+            ]
+        },
+        {
+            "word": "いちご",
+            "kanji": "苺",
+            "romaji": "i chi go",
+            "meaning": "strawberry",
+            "length": 3,
+            "syllables": [
+                "い",
+                "ち",
+                "ご"
+            ]
+        },
+        {
+            "word": "やま",
+            "kanji": "山",
+            "romaji": "ya ma",
+            "meaning": "mountain",
+            "length": 2,
+            "syllables": [
+                "や",
+                "ま"
+            ]
+        },
+        {
+            "word": "あめ",
+            "kanji": "雨",
+            "romaji": "a me",
+            "meaning": "rain",
+            "length": 2,
+            "syllables": [
+                "あ",
+                "め"
+            ]
+        },
+        {
+            "word": "いぬ",
+            "kanji": "犬",
+            "romaji": "i nu",
+            "meaning": "dog",
+            "length": 2,
+            "syllables": [
+                "い",
+                "ぬ"
+            ]
+        },
+        {
+            "word": "はな",
+            "kanji": "花",
+            "romaji": "ha na",
+            "meaning": "flower",
+            "length": 2,
+            "syllables": [
+                "は",
+                "な"
+            ]
+        },
+        {
+            "word": "かぜ",
+            "kanji": "風",
+            "romaji": "ka ze",
+            "meaning": "wind",
+            "length": 2,
+            "syllables": [
+                "か",
+                "ぜ"
+            ]
+        },
+        {
+            "word": "さくら",
+            "kanji": "桜",
+            "romaji": "sa ku ra",
+            "meaning": "cherry blossom",
+            "length": 3,
+            "syllables": [
+                "さ",
+                "く",
+                "ら"
+            ]
+        },
+        {
+            "word": "いえ",
+            "kanji": "家",
+            "romaji": "i e",
+            "meaning": "house",
+            "length": 2,
+            "syllables": [
+                "い",
+                "え"
+            ]
+        },
+        {
+            "word": "いす",
+            "kanji": "椅子",
+            "romaji": "i su",
+            "meaning": "chair",
+            "length": 2,
+            "syllables": [
+                "い",
+                "す"
+            ]
+        },
+        {
+            "word": "はし",
+            "kanji": "橋",
+            "romaji": "ha shi",
+            "meaning": "bridge",
+            "length": 2,
+            "syllables": [
+                "は",
+                "し"
+            ]
+        },
+        {
+            "word": "さかな",
+            "kanji": "魚",
+            "romaji": "sa ka na",
+            "meaning": "fish",
+            "length": 3,
+            "syllables": [
+                "さ",
+                "か",
+                "な"
+            ]
+        },
+        {
+            "word": "とり",
+            "kanji": "鳥",
+            "romaji": "to ri",
+            "meaning": "bird",
+            "length": 2,
+            "syllables": [
+                "と",
+                "り"
+            ]
+        },
+        {
+            "word": "き",
+            "kanji": "木",
+            "romaji": "ki",
+            "meaning": "tree",
+            "length": 1,
+            "syllables": [
+                "き"
+            ]
+        },
+        {
+            "word": "みず",
+            "kanji": "水",
+            "romaji": "mi zu",
+            "meaning": "water",
+            "length": 2,
+            "syllables": [
+                "み",
+                "ず"
+            ]
+        },
+        {
+            "word": "つき",
+            "kanji": "月",
+            "romaji": "tsu ki",
+            "meaning": "moon",
+            "length": 2,
+            "syllables": [
+                "つ",
+                "き"
+            ]
+        },
+        {
+            "word": "ひと",
+            "kanji": "人",
+            "romaji": "hi to",
+            "meaning": "person",
+            "length": 2,
+            "syllables": [
+                "ひ",
+                "と"
+            ]
+        },
+        {
+            "word": "はしる",
+            "kanji": "走る",
+            "romaji": "ha shi ru",
+            "meaning": "to run",
+            "length": 3,
+            "syllables": [
+                "は",
+                "し",
+                "る"
+            ]
+        },
+        {
+            "word": "あるく",
+            "kanji": "歩く",
+            "romaji": "a ru ku",
+            "meaning": "to walk",
+            "length": 3,
+            "syllables": [
+                "あ",
+                "る",
+                "く"
+            ]
+        },
+        {
+            "word": "のむ",
+            "kanji": "飲む",
+            "romaji": "no mu",
+            "meaning": "to drink",
+            "length": 2,
+            "syllables": [
+                "の",
+                "む"
+            ]
+        },
+        {
+            "word": "たべる",
+            "kanji": "食べる",
+            "romaji": "ta be ru",
+            "meaning": "to eat",
+            "length": 3,
+            "syllables": [
+                "た",
+                "べ",
+                "る"
+            ]
+        },
+        {
+            "word": "ほん",
+            "kanji": "本",
+            "romaji": "hon",
+            "meaning": "book",
+            "length": 1,
+            "syllables": [
+                "ほん"
+            ]
+        },
+        {
+            "word": "てがみ",
+            "kanji": "手紙",
+            "romaji": "te ga mi",
+            "meaning": "letter",
+            "length": 3,
+            "syllables": [
+                "て",
+                "が",
+                "み"
+            ]
+        },
+        {
+            "word": "りんご",
+            "kanji": "林檎",
+            "romaji": "rin go",
+            "meaning": "apple",
+            "length": 3,
+            "syllables": [
+                "り",
+                "ん",
+                "ご"
+            ]
+        },
+        {
+            "word": "みせ",
+            "kanji": "店",
+            "romaji": "mi se",
+            "meaning": "shop/store",
+            "length": 2,
+            "syllables": [
+                "み",
+                "せ"
+            ]
+        },
+        {
+            "word": "たから",
+            "kanji": "宝",
+            "romaji": "ta ka ra",
+            "meaning": "treasure",
+            "length": 3,
+            "syllables": [
+                "た",
+                "か",
+                "ら"
+            ]
+        },
+        {
+            "word": "つばさ",
+            "kanji": "翼",
+            "romaji": "tsu ba sa",
+            "meaning": "wing",
+            "length": 3,
+            "syllables": [
+                "つ",
+                "ば",
+                "さ"
+            ]
+        },
+        {
+            "word": "たまご",
+            "kanji": "卵",
+            "romaji": "ta ma go",
+            "meaning": "egg",
+            "length": 3,
+            "syllables": [
+                "た",
+                "ま",
+                "ご"
+            ]
+        },
+        {
+            "word": "くつ",
+            "kanji": "靴",
+            "romaji": "ku tsu",
+            "meaning": "shoe",
+            "length": 2,
+            "syllables": [
+                "く",
+                "つ"
+            ]
+        },
+        {
+            "word": "くるま",
+            "kanji": "車",
+            "romaji": "ku ru ma",
+            "meaning": "car",
+            "length": 3,
+            "syllables": [
+                "く",
+                "る",
+                "ま"
+            ]
+        },
+        {
+            "word": "つくえ",
+            "kanji": "机",
+            "romaji": "tsu ku e",
+            "meaning": "desk",
+            "length": 3,
+            "syllables": [
+                "つ",
+                "く",
+                "え"
+            ]
+        },
+        {
+            "word": "てちょう",
+            "kanji": "手帳",
+            "romaji": "te chō",
+            "meaning": "notebook",
+            "length": 3,
+            "syllables": [
+                "て",
+                "ちょ",
+                "う"
+            ]
+        },
+        {
+            "word": "かみ",
+            "kanji": "紙",
+            "romaji": "ka mi",
+            "meaning": "paper",
+            "length": 2,
+            "syllables": [
+                "か",
+                "み"
+            ]
+        },
+        {
+            "word": "あかい",
+            "kanji": "赤い",
+            "romaji": "a ka i",
+            "meaning": "red",
+            "length": 3,
+            "syllables": [
+                "あ",
+                "か",
+                "い"
+            ]
+        },
+        {
+            "word": "みどり",
+            "kanji": "緑",
+            "romaji": "mi do ri",
+            "meaning": "green",
+            "length": 3,
+            "syllables": [
+                "み",
+                "ど",
+                "り"
+            ]
+        },
+        {
+            "word": "あおい",
+            "kanji": "青い",
+            "romaji": "a o i",
+            "meaning": "blue",
+            "length": 3,
+            "syllables": [
+                "あ",
+                "お",
+                "い"
+            ]
+        },
+        {
+            "word": "きいろい",
+            "kanji": "黄色い",
+            "romaji": "ki iro i",
+            "meaning": "yellow",
+            "length": 4,
+            "syllables": [
+                "き",
+                "い",
+                "ろ",
+                "い"
+            ]
+        },
+        {
+            "word": "ゆみ",
+            "kanji": "弓",
+            "romaji": "yu mi",
+            "meaning": "bow",
+            "length": 2,
+            "syllables": [
+                "ゆ",
+                "み"
+            ]
+        },
+        {
+            "word": "や",
+            "kanji": "家",
+            "romaji": "ya",
+            "meaning": "home",
+            "length": 1,
+            "syllables": [
+                "や"
+            ]
+        },
+        {
+            "word": "ながい",
+            "kanji": "長い",
+            "romaji": "na ga i",
+            "meaning": "long",
+            "length": 3,
+            "syllables": [
+                "な",
+                "が",
+                "い"
+            ]
+        },
+        {
+            "word": "みち",
+            "kanji": "道",
+            "romaji": "mi chi",
+            "meaning": "road",
+            "length": 2,
+            "syllables": [
+                "み",
+                "ち"
+            ]
+        }
+    ]
+}
