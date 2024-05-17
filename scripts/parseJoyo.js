@@ -1,6 +1,6 @@
 import fs from "fs";
 
-//https://github.com/davidluzgouveia/kanji-data/blob/master/kanji-jouyou.json
+//https://raw.githubusercontent.com/davidluzgouveia/kanji-data/master/kanji-jouyou.json
 const file = fs.readFileSync('./scripts/data/joyokanji.json').toString();
 const kanjis = JSON.parse(file);
 
