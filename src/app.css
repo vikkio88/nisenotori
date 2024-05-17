@@ -19,13 +19,17 @@
 
 :root {
     --accent-color: #646cff;
-    --accent-v1-color: #535bf2;
+    --accent-v1-color: #4b52cc;
+    --accent-faint-color: #b0b4ff;
     --danger-color: #db3a34;
-    --danger-v1-color: #9c2723;
+    --danger-v1-color: #a12b28;
+    --danger-faint-color: #f4a3a0;
     --warning-color: #ed9b40;
-    --warning-v1-color: #bb7b32;
+    --warning-v1-color: #b37932;
+    --warning-faint-color: #f4cf9a;
     --success-color: #3bceac;
-    --success-v1-color: #2a977e;
+    --success-v1-color: #2b997e;
+    --success-faint-color: #a3e3d4;
 
     --border-radius: .6rem;
     --input-border-radius: 10px;
@@ -35,7 +39,11 @@
     --medium-font-size: 18px;
 
     --borders: 2px var(--main-font-color) solid;
-    --thin-borders: 2px var(--main-font-color) solid;
+    --borders-dashed: 2px var(--main-font-color) dashed;
+    --borders-dashed-danger: 2px var(--danger-color) dashed;
+    --borders-dashed-warning: 2px var(--warning-color) dashed;
+    --borders-dashed-success: 2px var(--success-color) dashed;
+    --thin-borders: 1px var(--main-font-color) solid;
     --box-shadow: 0 .2rem 1rem var(--main-font-color);
 
     line-height: 1.5;
@@ -71,19 +79,6 @@ h3 {
 
 main {
     height: 90vh;
-}
-
-/*
-Utils
-*/
-/* Behaviours */
-.h_inv:hover {
-    color: var(--main-bg-color);
-    background-color: var(--main-font-color);
-}
-
-.c-ptr {
-    cursor: pointer;
 }
 
 /* Box Model */
@@ -178,7 +173,7 @@ Utils
 }
 
 /* A set of items for lists that wrap */
-.fi {
+.fiwr {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -186,7 +181,7 @@ Utils
     justify-content: center;
 }
 
-.fic {
+.fiwc {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -206,10 +201,6 @@ Utils
     gap: 2rem;
 }
 
-.oa {
-    overflow: auto;
-}
-
 /* Font Styles */
 .tt-cpz {
     text-transform: capitalize;
@@ -227,17 +218,6 @@ Utils
 .danger {
     color: var(--danger-color);
 }
-
-
-/*
-Debug Utils
-*/
-.debug {
-    border: var(--borders);
-    border-color: blue;
-    background-color: red;
-}
-
 
 /** Buttons */
 button {
@@ -265,6 +245,11 @@ button:focus-visible {
 button:disabled {
     opacity: .5;
     cursor: not-allowed;
+}
+
+button.transparent {
+    background-color: var(--main-bg-color);
+    color: var(--main-font-color);
 }
 
 button.success {
@@ -304,6 +289,12 @@ button.small {
     font-size: .8rem;
 }
 
+/* button non-button */
+button.n-btn {
+    all: unset;
+    cursor: pointer;
+}
+
 /* Inputs */
 input[type="text"] {
     padding: 1rem 0.5rem;
@@ -317,11 +308,95 @@ input[type="radio"] {
     transform: scale(1.5);
 }
 
-/** More stuff for Tinchi **/
-.ftr {
+/*
+Utils
+*/
+.oa {
+    overflow: auto;
+}
+
+/* Behaviours */
+.h_inv:hover {
+    color: var(--main-bg-color);
+    background-color: var(--main-font-color);
+}
+
+.c-ptr {
+    cursor: pointer;
+}
+
+/** Positioning **/
+/* Floating top-right */
+.pos-a {
+    position: absolute;
+}
+
+.pos-r {
+    position: relative;
+}
+
+.z-idx {
+    z-index: 1;
+}
+
+.pos-atr {
     padding: var(--pad);
     z-index: 1;
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.pos-atl {
+    padding: var(--pad);
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.pos-abr {
+    padding: var(--pad);
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.pos-abl {
+    padding: var(--pad);
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/*
+Debug Utils
+*/
+.debug {
+    border: var(--borders);
+    border-color: blue;
+    background-color: red;
+}
+
+/**
+Animations
+**/
+.a_pulse {
+    animation: pulse 0.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+    }
+
+    70% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.95);
+    }
 }
