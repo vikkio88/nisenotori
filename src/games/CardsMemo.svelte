@@ -1,14 +1,14 @@
 <script>
   import FlipCard from "../components/FlipCard.svelte";
   import Symbol from "../components/Symbol.svelte";
-  import { ALL_SYLLABALES } from "../libs/data/charSets";
+  import { ALL_SYLLABLES } from "../libs/data/charSets";
   import { HIRAGANA, KATAKANA } from "../libs/data/consts";
   import { randomKata } from "../libs/utils";
   import audioInstance, { SOUNDS } from "../libs/audio";
   import { onMount } from "svelte";
 
   export let charsetLabel = "All Syllables";
-  export let charset = [...ALL_SYLLABALES];
+  export let charset = [...ALL_SYLLABLES];
   export let kataChoice = HIRAGANA;
   export let remove = false;
   export let mute = true;

@@ -90,7 +90,8 @@
             "meaning": "smartphone",
             "length": 6,
             "syllables": [
-                "スマー",
+                "ス",
+                "マー",
                 "ト",
                 "フォ",
                 "ン"
@@ -102,7 +103,9 @@
             "meaning": "ice cream",
             "length": 7,
             "syllables": [
-                "アイス",
+                "ア",
+                "イ",
+                "ス",
                 "ク",
                 "リー",
                 "ム"
@@ -114,7 +117,9 @@
             "meaning": "sandwich",
             "length": 6,
             "syllables": [
-                "サンド",
+                "サ",
+                "ン",
+                "ド",
                 "イッ",
                 "チ"
             ]
@@ -189,9 +194,12 @@
             "meaning": "internet",
             "length": 7,
             "syllables": [
-                "イン",
+                "イ",
+                "ン",
                 "ター",
-                "ネット"
+                "ネ",
+                "ッ",
+                "ト"
             ]
         },
         {
@@ -200,7 +208,8 @@
             "meaning": "restaurant",
             "length": 5,
             "syllables": [
-                "レス",
+                "レ",
+                "ス",
                 "ト",
                 "ラ",
                 "ン"
@@ -223,7 +232,8 @@
             "length": 3,
             "syllables": [
                 "ワ",
-                "イン"
+                "イ",
+                "ン"
             ]
         },
         {
@@ -309,7 +319,8 @@
             "syllables": [
                 "ネ",
                 "ク",
-                "タイ"
+                "タ",
+                "イ"
             ]
         },
         {
@@ -318,7 +329,8 @@
             "meaning": "sunglasses",
             "length": 5,
             "syllables": [
-                "サン",
+                "サ",
+                "ン",
                 "グ",
                 "ラ",
                 "ス"
@@ -453,7 +465,8 @@
             "syllables": [
                 "ガ",
                 "ソ",
-                "リン"
+                "リ",
+                "ン"
             ]
         },
         {
@@ -616,7 +629,8 @@
             "meaning": "good evening",
             "length": 5,
             "syllables": [
-                "こん",
+                "こ",
+                "ん",
                 "ば",
                 "ん",
                 "は"

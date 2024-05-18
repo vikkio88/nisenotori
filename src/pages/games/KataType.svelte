@@ -26,7 +26,7 @@
         <KatakanaType
             words={gameType === TYPING_GAMES.HIRAGANA
                 ? words.hiraganaWords
-                : words.katakanaWords}
+                : words.katakanaWords.slice(0, 5)}
             restart={() => (gameStarted = false)}
             end={() => navigate("/", { replace: true })}
         />

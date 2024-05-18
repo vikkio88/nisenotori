@@ -1,6 +1,6 @@
 import { ROMAJI_CHARS as r } from "./kataMap";
 
-export const ALL_SYLLABALES = Object.values(r);
+export const ALL_SYLLABLES = Object.values(r);
 export const A = [r.A, r.I, r.U, r.E, r.O];
 export const K = [r.KA, r.KI, r.KU, r.KE, r.KO];
 
@@ -49,7 +49,7 @@ export const CHARSETS = [
     { label: 'Base', charset: BASE },
     //
 
-    { label: 'All', charset: ALL_SYLLABALES },
+    { label: 'All', charset: ALL_SYLLABLES },
     { label: 'A-O', charset: A },
     { label: 'K', charset: K },
     { label: 'K + Dakuon', charset: eK },

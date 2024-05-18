@@ -4,7 +4,7 @@ import fs from "fs";
 const file = fs.readFileSync('./scripts/data/kanji-jouyou.json').toString();
 const kanjis = JSON.parse(file);
 
-console.log(`got ${Object.keys(kanjis).length} kanjis`);
+console.log(`Parsing ${Object.keys(kanjis).length} kanjis...`);
 const groups = {
     byGrade: {},
     byStrokes: {},
@@ -23,11 +23,16 @@ for (const k of Object.keys(kanjis)) {
 groups.byFreq = groups.byFreq.sort((i, o) => o.f - i.f);
 
 fs.writeFileSync('./scripts/data/kanji-groups.json', JSON.stringify(groups));
+console.log('done.');
+
 const files = [
     'kanji-groups',
     'words',
     'kanji-jouyou',
 ];
 for (const file of files) {
+    console.log(`moving ${file}.json to assets...`);
     fs.copyFileSync(`./scripts/data/${file}.json`, `public/assets/data/${file}.json`);
 }
+
+console.log('finished.');
