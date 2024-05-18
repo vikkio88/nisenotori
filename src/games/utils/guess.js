@@ -1,7 +1,6 @@
 import { removeCurrentRomaji } from "../../libs/data/charSets";
 import { randomKata } from "../../libs/utils";
-
-function byRandom() { return Math.random() - 0.5; }
+import { byRandom } from "./shared";
 
 export const GUESS_GAME_TYPES = {
     SYLLABLES: 'syllables',
