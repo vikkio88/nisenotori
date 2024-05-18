@@ -7,7 +7,7 @@
   import { HIRAGANA, KATAKANA } from "./libs/data/consts";
   import Guess from "./pages/games/Guess.svelte";
   import Account from "./pages/Account.svelte";
-  import KatakaType from "./pages/games/KatakaType.svelte";
+  import KataType from "./pages/games/KataType.svelte";
 
   let url = "";
 </script>
@@ -29,7 +29,7 @@
     <!-- Games -->
     <Route path="/cards" component={Cards} />
     <Route path="/guess" component={Guess} />
-    <Route path="/katakatype" component={KatakaType} />
+    <Route path="/katatype" component={KataType} />
   </Router>
 </main>
 

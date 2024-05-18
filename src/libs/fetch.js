@@ -1,15 +1,6 @@
-const API_URL = "/assets/data";
-
-let token = null;
+const ASSETS_URL = "/assets/data";
 
 export function basicHeaders(additional = {}) {
-
-    if (Boolean(token)) {
-        additional = {
-            ...additional,
-            Authorization: token,
-        };
-    }
     return {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -17,11 +8,23 @@ export function basicHeaders(additional = {}) {
     };
 }
 
-
 export function get(api, headers = {}) {
-    return fetch(`${API_URL}/${api}`, { method: "GET", headers: { ...basicHeaders(), ...headers } }).then(resp => resp.json());
+    return fetch(
+        `${api}`,
+        {
+            method: "GET",
+            headers: {
+                ...basicHeaders(),
+                ...headers
+            }
+        }
+    );
+}
+
+export function getJsonAsset(file) {
+    return get(`${ASSETS_URL}/${file}.json`).then(resp => resp.json());
 }
 
 export function loadWords() {
-    return get('words.json');
+    return getJsonAsset('words');
 }
