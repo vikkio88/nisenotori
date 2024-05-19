@@ -31,7 +31,7 @@ export function getNextTypingQuiz(words, kana) {
         const k = randomKata();
         moreGuesses.push(k[kana]);
     }
-    const guesses = [...new Set([...word.syllables, ...moreGuesses])];
+    const guesses = [...new Set([...word.syllables, ...moreGuesses])].sort(byRandom);
 
     return { word, guesses };
 }

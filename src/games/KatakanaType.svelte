@@ -13,19 +13,25 @@
 
     let currentQuiz = getNextTypingQuiz(words, kana);
     let currentGuess = [];
+    let showingResult = false;
+    let correctGuess = false;
     let finalResult = new GameResult();
 
     function guess() {
         const isCorrect = checkGuess(currentGuess, currentQuiz);
         isCorrect ? finalResult.markCorrect() : finalResult.markWrong();
-        //TODO: add correct/wrong animation
-        words = words.filter((w) => w.word != currentQuiz.word.word);
-        currentQuiz = getNextTypingQuiz(words, kana);
-        currentGuess = [];
-        if (currentQuiz.word == undefined) {
-            gameOver = true;
-            return;
-        }
+        showingResult = true;
+        correctGuess = isCorrect;
+        setTimeout(() => {
+            words = words.filter((w) => w.word != currentQuiz.word.word);
+            currentQuiz = getNextTypingQuiz(words, kana);
+            currentGuess = [];
+            if (currentQuiz.word == undefined) {
+                gameOver = true;
+                return;
+            }
+            showingResult = false;
+        }, 2000);
     }
 
     function addGuess(syllable) {
@@ -42,10 +48,24 @@
     <div class="f1 f cc">
         <h1>{words.length}</h1>
         <h2>{currentQuiz.word.meaning}</h2>
-        <h1>{currentQuiz.word.romaji.split(" ").join("")}</h1>
+        {#if showingResult}
+            <h1
+                class="answer anim_pulse"
+                class:correct={correctGuess}
+                class:wrong={!correctGuess}
+            >
+                {currentQuiz.word.word}
+            </h1>
+        {:else}
+            <h1>{currentQuiz.word.romaji.split(" ").join("")}</h1>
+        {/if}
         <div class="f rc g_5 guesses">
             {#each currentGuess as guess}
-                <button class="transparent" on:click={() => removeGuess(guess)}>
+                <button
+                    class="transparent"
+                    disabled={showingResult}
+                    on:click={() => removeGuess(guess)}
+                >
                     {guess}
                 </button>
             {/each}
@@ -55,7 +75,7 @@
                 <button
                     on:click={() => addGuess(guess)}
                     disabled={currentGuess.length >
-                        currentQuiz.word.syllables.length + 1}
+                        currentQuiz.word.syllables.length + 1 || showingResult}
                 >
                     {guess}
                 </button>
@@ -66,7 +86,7 @@
         <button
             class="big success"
             on:click={guess}
-            disabled={currentGuess.length < 1}
+            disabled={currentGuess.length < 1 || showingResult}
         >
             Guess
         </button>
@@ -86,6 +106,12 @@
 {/if}
 
 <style>
+    .correct {
+        color: var(--success-color);
+    }
+    .wrong {
+        color: var(--danger-color);
+    }
     .guesses {
         min-height: 100px;
         min-width: 250px;
