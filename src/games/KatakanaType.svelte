@@ -1,5 +1,6 @@
 <script>
     import { KATAKANA } from "../libs/data/consts";
+    import { GameResult } from "./utils/gameResult";
     import { checkGuess, getNextTypingQuiz } from "./utils/typing";
 
     export let words = [];
@@ -12,11 +13,12 @@
 
     let currentQuiz = getNextTypingQuiz(words, kana);
     let currentGuess = [];
+    let finalResult = new GameResult();
 
     function guess() {
         const isCorrect = checkGuess(currentGuess, currentQuiz);
-        console.log({ isCorrect });
-
+        isCorrect ? finalResult.markCorrect() : finalResult.markWrong();
+        //TODO: add correct/wrong animation
         words = words.filter((w) => w.word != currentQuiz.word.word);
         currentQuiz = getNextTypingQuiz(words, kana);
         currentGuess = [];
@@ -71,8 +73,15 @@
     </div>
 {:else}
     <div class="f1 f cc">
-        <button class="success" on:click={restart}>Restart</button>
-        <button class="danger" on:click={end}>End</button>
+        <h2>Finished</h2>
+        <h2 class="mg">
+            Correct: {finalResult.result().correct} Wrong: {finalResult.result()
+                .wrong}
+        </h2>
+        <div class="fic g_5">
+            <button class="success" on:click={restart}>Restart</button>
+            <button class="danger" on:click={end}>End</button>
+        </div>
     </div>
 {/if}
 

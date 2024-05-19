@@ -41,7 +41,9 @@
                     <SyllabarySelector bind:kata={gameType} />
                 </div>
             </div>
-            <button class="success big" on:click={startGame}>Start</button>
+            <div class="f1 f cc">
+                <button class="success big" on:click={startGame}>Start</button>
+            </div>
         </div>
     {/if}
 {/await}
