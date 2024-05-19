@@ -6,6 +6,20 @@ export const TYPING_GAMES = {
     KATAKANA, HIRAGANA
 };
 
+export function checkGuess(guess, { word }) {
+    if (guess.length != word.syllables.length) {
+        return false;
+    }
+
+    for (const i in word.syllables) {
+        if (guess[i] != word.syllables[i]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 export function getNextTypingQuiz(words, kana) {
     words.sort(byRandom);
     const word = words[0];
@@ -17,7 +31,7 @@ export function getNextTypingQuiz(words, kana) {
         const k = randomKata();
         moreGuesses.push(k[kana]);
     }
-    const guesses = [...word.syllables, ...moreGuesses];
+    const guesses = [...new Set([...word.syllables, ...moreGuesses])];
 
     return { word, guesses };
 }

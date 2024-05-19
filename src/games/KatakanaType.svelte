@@ -1,6 +1,6 @@
 <script>
     import { KATAKANA } from "../libs/data/consts";
-    import { getNextTypingQuiz } from "./utils/typing";
+    import { checkGuess, getNextTypingQuiz } from "./utils/typing";
 
     export let words = [];
     export let kana = KATAKANA;
@@ -14,7 +14,8 @@
     let currentGuess = [];
 
     function guess() {
-        console.log(currentGuess, currentQuiz.word.syllables);
+        const isCorrect = checkGuess(currentGuess, currentQuiz);
+        console.log({ isCorrect });
 
         words = words.filter((w) => w.word != currentQuiz.word.word);
         currentQuiz = getNextTypingQuiz(words, kana);
