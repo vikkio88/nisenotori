@@ -60,8 +60,7 @@
 {#if !gameOver}
     <meter value={finalResult.total()} max={words.length} min="1" />
     <div class="f1 f cc">
-        <h1>{words.length}</h1>
-        <h2>{currentQuiz.word.meaning}</h2>
+        <h2 class="translation">{currentQuiz.word.meaning}</h2>
         {#if showingResult}
             <h1
                 class="answer anim_pulse"
@@ -139,5 +138,14 @@
 
     meter {
         width: 80vw;
+    }
+
+    .translation {
+        color: #a5a5a5;
+        font-size: .9rem;
+    }
+
+    h1 {
+        font-size: 3rem;
     }
 </style>
