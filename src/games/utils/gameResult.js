@@ -14,9 +14,13 @@ export class GameResult {
         this.#right++;
     }
 
+    total() {
+        return this.#right + this.#wrong;
+    }
+
     result() {
         return {
-            total: this.#right + this.#wrong,
+            total: this.total(),
             correct: this.#right,
             wrong: this.#wrong,
             errors: this.#wrongRomaji

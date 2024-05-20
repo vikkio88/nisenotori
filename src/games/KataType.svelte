@@ -2,9 +2,12 @@
     import { KATAKANA } from "../libs/data/consts";
     import { GameResult } from "./utils/gameResult";
     import { checkGuess, getNextTypingQuiz } from "./utils/typing";
+    import audioInstance, { SOUNDS } from "../libs/audio";
 
+    const audio = audioInstance();
     export let words = [];
     export let kana = KATAKANA;
+    export let mute = false;
 
     export let end = () => console.log("end");
     export let restart = () => console.log("restart");
@@ -19,19 +22,29 @@
 
     function guess() {
         const isCorrect = checkGuess(currentGuess, currentQuiz);
-        isCorrect ? finalResult.markCorrect() : finalResult.markWrong();
+        if (isCorrect) {
+            !mute && audio.play(SOUNDS.BEEP);
+            finalResult.markCorrect();
+        } else {
+            !mute && audio.play(SOUNDS.BOBOP);
+            finalResult.markWrong();
+        }
         showingResult = true;
         correctGuess = isCorrect;
-        setTimeout(() => {
-            words = words.filter((w) => w.word != currentQuiz.word.word);
-            currentQuiz = getNextTypingQuiz(words, kana);
-            currentGuess = [];
-            if (currentQuiz.word == undefined) {
-                gameOver = true;
-                return;
-            }
-            showingResult = false;
-        }, 2000);
+        finalResult = finalResult;
+        setTimeout(
+            () => {
+                words = words.filter((w) => w.word != currentQuiz.word.word);
+                currentQuiz = getNextTypingQuiz(words, kana);
+                currentGuess = [];
+                if (currentQuiz.word == undefined) {
+                    gameOver = true;
+                    return;
+                }
+                showingResult = false;
+            },
+            isCorrect ? 1500 : 2500,
+        );
     }
 
     function addGuess(syllable) {
@@ -45,6 +58,7 @@
 </script>
 
 {#if !gameOver}
+    <meter value={finalResult.total()} max={words.length} min="1" />
     <div class="f1 f cc">
         <h1>{words.length}</h1>
         <h2>{currentQuiz.word.meaning}</h2>
@@ -121,5 +135,9 @@
         border-radius: var(--border-radius);
         margin-top: 1rem;
         margin-bottom: 1rem;
+    }
+
+    meter {
+        width: 80vw;
     }
 </style>
