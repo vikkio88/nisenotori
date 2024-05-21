@@ -10,7 +10,7 @@
   import Symbol from "../components/Symbol.svelte";
 
   let gameFinished = false;
-  const result = new GameResult();
+  let result = new GameResult();
   let finalResult = null;
 
   export let kataChoice = HIRAGANA;
@@ -75,6 +75,8 @@
       lastCorrect = false;
     }
 
+    result = result;
+
     setTimeout(() => {
       charset = charset.filter(removeCurrentRomaji(currentQuiz.kata));
       canGuess = true;
@@ -111,6 +113,7 @@
   }
 </script>
 
+<meter value={result.total()} min="1" max={charset.length} />
 {#if gameFinished}
   <div class="f1 f cc">
     <h2>Finished</h2>
@@ -141,7 +144,8 @@
 {:else}
   <div class="f1 f cc">
     {#if currentQuiz.guessType === GUESS_GAME_TYPES.SYLLABLES}
-      <FlipCard
+      <Symbol
+        big
         kata={currentQuiz.kata}
         hiragana={kataChoice === HIRAGANA}
         katakana={kataChoice === KATAKANA}
@@ -151,30 +155,8 @@
         🔊
       </button>
     {/if}
-    <div class="fi mg2 g_5">
-      {#each currentQuiz.possibleKatas as r}
-        <button class="big" on:click={() => guess(r)} disabled={!canGuess}>
-          {#if currentQuiz.guessType === GUESS_GAME_TYPES.SYLLABLES}
-            {#if crossKanaGuess}
-              {#if kataChoice === HIRAGANA}
-                {KATA_MAP[r].katakana}
-              {:else}
-                {KATA_MAP[r].hiragana}
-              {/if}
-            {:else}
-              {KATA_MAP[r].romajiLabel || KATA_MAP[r].romaji}
-            {/if}
-          {:else if currentQuiz.guessType === GUESS_GAME_TYPES.AUDIO}
-            {#if kataChoice === HIRAGANA}
-              {KATA_MAP[r].hiragana}
-            {:else}
-              {KATA_MAP[r].katakana}
-            {/if}
-          {/if}
-        </button>
-      {/each}
-    </div>
   </div>
+
   <div
     class="result pulse f cc"
     class:hide={canGuess}
@@ -183,6 +165,30 @@
   >
     {`${lastCorrect ? "Correct" : `Wrong`}`}
     <h1>{getCorrectAnswer(currentQuiz)}</h1>
+  </div>
+
+  <div class="fiwr mg2 g_5">
+    {#each currentQuiz.possibleKatas as r}
+      <button class="big" on:click={() => guess(r)} disabled={!canGuess}>
+        {#if currentQuiz.guessType === GUESS_GAME_TYPES.SYLLABLES}
+          {#if crossKanaGuess}
+            {#if kataChoice === HIRAGANA}
+              {KATA_MAP[r].katakana}
+            {:else}
+              {KATA_MAP[r].hiragana}
+            {/if}
+          {:else}
+            {KATA_MAP[r].romajiLabel || KATA_MAP[r].romaji}
+          {/if}
+        {:else if currentQuiz.guessType === GUESS_GAME_TYPES.AUDIO}
+          {#if kataChoice === HIRAGANA}
+            {KATA_MAP[r].hiragana}
+          {:else}
+            {KATA_MAP[r].katakana}
+          {/if}
+        {/if}
+      </button>
+    {/each}
   </div>
 {/if}
 
@@ -193,7 +199,7 @@
   }
 
   .result {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
   .correct {
@@ -205,5 +211,9 @@
 
   .hide {
     visibility: hidden;
+  }
+
+  meter {
+    width: 80vw;
   }
 </style>

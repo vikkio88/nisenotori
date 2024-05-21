@@ -6,6 +6,7 @@
   export let romaji = false;
 
   export let small = false;
+  export let big = false;
 </script>
 
 {#if !Boolean(kata)}
@@ -28,7 +29,7 @@
     </div>
   </button>
 {:else}
-  <div class="symbol f cc" class:small>
+  <div class="symbol f cc" class:small class:big>
     {#if romaji}
       <span>{kata.romajiLabel || kata.romaji}</span>
     {/if}
@@ -67,5 +68,13 @@
   }
   div.small {
     padding: 0.5rem 1rem;
+  }
+
+  div.big {
+    padding: 3rem 4.3rem;
+  }
+
+  div.big > h1 {
+    font-size: 2rem;
   }
 </style>
